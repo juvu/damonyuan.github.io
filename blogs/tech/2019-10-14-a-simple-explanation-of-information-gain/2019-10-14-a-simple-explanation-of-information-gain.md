@@ -23,7 +23,7 @@ However here we are going to use another way, using Information Gain from [ID3 a
 Information Gain is the measure of the difference in Entropy from before to after the set S is split on an attribute A. In other words, how much uncertainty in S was **reduced** after splitting set S on attribute A, the more uncertainty reduced the better the split is. the formula is defined as follow,
 
 $$
-  IG(S, A) = H(S) - \sum_{t\in T}p(t)H(t) = H(S) - H(S\|A)
+  IG(S, A) = H(S) - \sum_{t\in T}p(t)H(t) = H(S) - H(S|A)
 $$  
 
   Where,
