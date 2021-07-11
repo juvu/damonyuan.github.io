@@ -2,6 +2,12 @@
   "plugins": [
     "intopic-toc",
     "collapsible-chapters",
-    "katex"
-  ]
+    "katex",
+    "ga"
+  ],
+  "pluginsConfig": {
+    "ga": {
+        "token": "UA-92600235-2"
+    }
+}
 }
