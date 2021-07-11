@@ -1,0 +1,1195 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 6 (下) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="手动拆解《Quantitative Trading - How to Build Your Own Algorithmic Trading Business》（六.2）">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../payments-systems/" />
+    
+    
+    <link rel="prev" href="../2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Blogs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    2021
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../blogs/tech/2021-01-08-gcp-products/2021-01-08-gcp-products.html">
+            
+                <a href="../../../blogs/tech/2021-01-08-gcp-products/2021-01-08-gcp-products.html">
+            
+                    
+                    GCP Products
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    2020
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../blogs/tech/2020-10-31-python-metaclass.html">
+            
+                <a href="../../../blogs/tech/2020-10-31-python-metaclass.html">
+            
+                    
+                    Python Metaclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../blogs/tech/2020-10-07-tools-for-reliability.html">
+            
+                <a href="../../../blogs/tech/2020-10-07-tools-for-reliability.html">
+            
+                    
+                    Tools for Reliability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../../blogs/tech/2020-09-10-MVCC/2020-09-10-MVCC.html">
+            
+                <a href="../../../blogs/tech/2020-09-10-MVCC/2020-09-10-MVCC.html">
+            
+                    
+                    MVCC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../../blogs/tech/2020-07-21-shards-replicas-and-nodes.html">
+            
+                <a href="../../../blogs/tech/2020-07-21-shards-replicas-and-nodes.html">
+            
+                    
+                    Shards, Replicas and Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../../blogs/tech/2020-02-24-call-a-class-method-from-an-instance-in-python/2020-02-24-call-a-class-method-from-an-instance-in-python.html">
+            
+                <a href="../../../blogs/tech/2020-02-24-call-a-class-method-from-an-instance-in-python/2020-02-24-call-a-class-method-from-an-instance-in-python.html">
+            
+                    
+                    Call a Class Method from an Instance in Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../../blogs/tech/2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.html">
+            
+                <a href="../../../blogs/tech/2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.html">
+            
+                    
+                    MVVM vs Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../../../blogs/tech/2020-02-12-netflix-vs-k8s+istio/2020-02-12-netflix-vs-k8s+istio.html">
+            
+                <a href="../../../blogs/tech/2020-02-12-netflix-vs-k8s+istio/2020-02-12-netflix-vs-k8s+istio.html">
+            
+                    
+                    Two Microservice Tech Stacks: Netflix vs K8S + Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../../../blogs/tech/2020-02-10-k8s-ss-kcp.html">
+            
+                <a href="../../../blogs/tech/2020-02-10-k8s-ss-kcp.html">
+            
+                    
+                    A Kubernetes solution for ShadowSocks + kcptun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="../../../blogs/tech/2020-01-31-wuhan-coronavirus-timeline-api/2020-01-31-wuhan-coronavirus-timeline-api.html">
+            
+                <a href="../../../blogs/tech/2020-01-31-wuhan-coronavirus-timeline-api/2020-01-31-wuhan-coronavirus-timeline-api.html">
+            
+                    
+                    A Test App with Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    2019
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../blogs/tech/2019-11-30-Java-from-code-to-run/2019-11-30-Java-from-code-to-run.html">
+            
+                <a href="../../../blogs/tech/2019-11-30-Java-from-code-to-run/2019-11-30-Java-from-code-to-run.html">
+            
+                    
+                    Java - from code to run
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../blogs/tech/2019-10-27-android-booting-process/2019-10-27-android-booting-process.html">
+            
+                <a href="../../../blogs/tech/2019-10-27-android-booting-process/2019-10-27-android-booting-process.html">
+            
+                    
+                    Android Linux Booting Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../../blogs/tech/2019-10-24-resolve-single-number-problems/2019-10-24-resolve-single-number-problems.html">
+            
+                <a href="../../../blogs/tech/2019-10-24-resolve-single-number-problems/2019-10-24-resolve-single-number-problems.html">
+            
+                    
+                    Resolve Single Number Problems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../../blogs/tech/2019-10-24-resolve-recursion-problems/2019-10-24-resolve-recursion-problems.html">
+            
+                <a href="../../../blogs/tech/2019-10-24-resolve-recursion-problems/2019-10-24-resolve-recursion-problems.html">
+            
+                    
+                    Resolve Recursion Problems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../../../blogs/tech/2019-10-18-the-things-to-consider-as-an-architect/2019-10-18-the-things-to-consider-as-an-architect.html">
+            
+                <a href="../../../blogs/tech/2019-10-18-the-things-to-consider-as-an-architect/2019-10-18-the-things-to-consider-as-an-architect.html">
+            
+                    
+                    The Things to Consider as An Architect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../../../blogs/tech/2019-10-14-a-simple-explanation-of-information-gain/2019-10-14-a-simple-explanation-of-information-gain.html">
+            
+                <a href="../../../blogs/tech/2019-10-14-a-simple-explanation-of-information-gain/2019-10-14-a-simple-explanation-of-information-gain.html">
+            
+                    
+                    A Simple Explanation of Information Gain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../../../blogs/tech/2019-10-10-developing-a-machine-learning-application/2019-10-10-developing-a-machine-learning-application.html">
+            
+                <a href="../../../blogs/tech/2019-10-10-developing-a-machine-learning-application/2019-10-10-developing-a-machine-learning-application.html">
+            
+                    
+                    Developing a Machine Learning Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../../../blogs/tech/2019-10-08-machine-learning-tasks/2019-10-08-machine-learning-tasks.html">
+            
+                <a href="../../../blogs/tech/2019-10-08-machine-learning-tasks/2019-10-08-machine-learning-tasks.html">
+            
+                    
+                    Machine Learning Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../../../blogs/tech/2019-10-01-The-difference-between-127.0.0.1-and-0.0.0.0.html">
+            
+                <a href="../../../blogs/tech/2019-10-01-The-difference-between-127.0.0.1-and-0.0.0.0.html">
+            
+                    
+                    The difference between 127.0.0.1 and 0.0.0.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../../../blogs/tech/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning.html">
+            
+                <a href="../../../blogs/tech/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning.html">
+            
+                    
+                    Relationship between AI, Machine Learning and Deep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../../../blogs/tech/2019-04-09-new-script.html">
+            
+                <a href="../../../blogs/tech/2019-04-09-new-script.html">
+            
+                    
+                    Shell Script Generator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../../../blogs/tech/2019-04-09-mac-vpn-script.html">
+            
+                <a href="../../../blogs/tech/2019-04-09-mac-vpn-script.html">
+            
+                    
+                    Mac VPN script
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    2018
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../../blogs/tech/2018-05-07-deploy-ShadowSocks-Manager-in-one-minute.html">
+            
+                <a href="../../../blogs/tech/2018-05-07-deploy-ShadowSocks-Manager-in-one-minute.html">
+            
+                    
+                    相信科学 - 一分钟部署 ShadowSocks-Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../../blogs/tech/2018-04-15-GIL-in-ruby.html">
+            
+                <a href="../../../blogs/tech/2018-04-15-GIL-in-ruby.html">
+            
+                    
+                    Digest: GIL in Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../../blogs/tech/2018-04-15-An-introduction-to-functional-programming-abstract.html">
+            
+                <a href="../../../blogs/tech/2018-04-15-An-introduction-to-functional-programming-abstract.html">
+            
+                    
+                    Digest: An introduction to functional programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    2017
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../../blogs/tech/2017-11-27-Start-ShadowSocks-in-One-Minute.html">
+            
+                <a href="../../../blogs/tech/2017-11-27-Start-ShadowSocks-in-One-Minute.html">
+            
+                    
+                    Start ShadowSocks in One Minute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../../blogs/tech/2017-09-14-Javascript-vs-Ruby-Inheritance/2017-09-14-Javascript-vs-Ruby-Inheritance.html">
+            
+                <a href="../../../blogs/tech/2017-09-14-Javascript-vs-Ruby-Inheritance/2017-09-14-Javascript-vs-Ruby-Inheritance.html">
+            
+                    
+                    JavaScript vs Ruby in Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../../blogs/tech/2017-07-02-Docker-inside-GFW/2017-07-02-Docker-inside-GFW.html">
+            
+                <a href="../../../blogs/tech/2017-07-02-Docker-inside-GFW/2017-07-02-Docker-inside-GFW.html">
+            
+                    
+                    Docker inside GFW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../../blogs/tech/2017-07-01-Test-with-iOS.html">
+            
+                <a href="../../../blogs/tech/2017-07-01-Test-with-iOS.html">
+            
+                    
+                    Test with iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Series
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    CFA Preparation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../cfa/LEVEL_1.html">
+            
+                <a href="../../cfa/LEVEL_1.html">
+            
+                    
+                    CFA LEVEL 1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" data-path="../../cfa/EQUITY/">
+            
+                <a href="../../cfa/EQUITY/">
+            
+                    
+                    EQUITY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1.1" data-path="../../cfa/EQUITY/READING36.html">
+            
+                <a href="../../cfa/EQUITY/READING36.html">
+            
+                    
+                    Reading 36
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.1.2" data-path="../../cfa/EQUITY/READING37.html">
+            
+                <a href="../../cfa/EQUITY/READING37.html">
+            
+                    
+                    Reading 37
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.1.3" data-path="../../cfa/EQUITY/READING38.html">
+            
+                <a href="../../cfa/EQUITY/READING38.html">
+            
+                    
+                    Reading 38
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.1.4" data-path="../../cfa/EQUITY/READING39.html">
+            
+                <a href="../../cfa/EQUITY/READING39.html">
+            
+                    
+                    Reading 39
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.1.5" data-path="../../cfa/EQUITY/READING40.html">
+            
+                <a href="../../cfa/EQUITY/READING40.html">
+            
+                    
+                    Reading 40
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.1.6" data-path="../../cfa/EQUITY/READING41.html">
+            
+                <a href="../../cfa/EQUITY/READING41.html">
+            
+                    
+                    Reading 41
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Quantitative Trading with Backtrader
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../2020-09-09-backtrader-architecture/2020-09-09-backtrader-architecture.html">
+            
+                <a href="../2020-09-09-backtrader-architecture/2020-09-09-backtrader-architecture.html">
+            
+                    
+                    Backtrader Architecut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../2020-09-27-qt-htbyoatb-1/2020-09-27-qt-htbyoatb-1.html">
+            
+                <a href="../2020-09-27-qt-htbyoatb-1/2020-09-27-qt-htbyoatb-1.html">
+            
+                    
+                    Chapter 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../2020-09-28-qt-htbyoatb-2/2020-09-28-qt-htbyoatb-2.html">
+            
+                <a href="../2020-09-28-qt-htbyoatb-2/2020-09-28-qt-htbyoatb-2.html">
+            
+                    
+                    Chapter 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../2020-09-29-qt-htbyoatb-3.1/2020-09-29-qt-htbyoatb-3.1.html">
+            
+                <a href="../2020-09-29-qt-htbyoatb-3.1/2020-09-29-qt-htbyoatb-3.1.html">
+            
+                    
+                    Chapter 3 (上)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../2020-09-29-qt-htbyoatb-3.2/2020-09-29-qt-htbyoatb-3.2.html">
+            
+                <a href="../2020-09-29-qt-htbyoatb-3.2/2020-09-29-qt-htbyoatb-3.2.html">
+            
+                    
+                    Chapter 3 (下)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../2020-10-01-qt-htbyoatb-4/2020-10-01-qt-htbyoatb-4.html">
+            
+                <a href="../2020-10-01-qt-htbyoatb-4/2020-10-01-qt-htbyoatb-4.html">
+            
+                    
+                    Chapter 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="../2020-10-01-qt-htbyoatb-5/2020-10-01-qt-htbyoatb-5.html">
+            
+                <a href="../2020-10-01-qt-htbyoatb-5/2020-10-01-qt-htbyoatb-5.html">
+            
+                    
+                    Chapter 5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="../2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.html">
+            
+                <a href="../2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.html">
+            
+                    
+                    Chapter 6 (上)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.9" data-path="2020-10-20-qt-htbyoatb-6.2.html">
+            
+                <a href="2020-10-20-qt-htbyoatb-6.2.html">
+            
+                    
+                    Chapter 6 (下)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../payments-systems/">
+            
+                <a href="../../payments-systems/">
+            
+                    
+                    Payments Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../payments-systems/CHAPTER_1.html">
+            
+                <a href="../../payments-systems/CHAPTER_1.html">
+            
+                    
+                    1. Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../payments-systems/CHAPTER_2.html">
+            
+                <a href="../../payments-systems/CHAPTER_2.html">
+            
+                    
+                    2. Payments System Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../payments-systems/accounting/INTRO.html">
+            
+                <a href="../../payments-systems/accounting/INTRO.html">
+            
+                    
+                    Accounting Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.3.1" data-path="../../payments-systems/accounting/ACCOUNT.html">
+            
+                <a href="../../payments-systems/accounting/ACCOUNT.html">
+            
+                    
+                    Account
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3.2" data-path="../../payments-systems/accounting/ACCRUAL_ACCOUNTING.html">
+            
+                <a href="../../payments-systems/accounting/ACCRUAL_ACCOUNTING.html">
+            
+                    
+                    Accrual Accounting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3.3" data-path="../../payments-systems/accounting/JOURNAL.html">
+            
+                <a href="../../payments-systems/accounting/JOURNAL.html">
+            
+                    
+                    Journal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3.4" data-path="../../payments-systems/accounting/LEDGER.html">
+            
+                <a href="../../payments-systems/accounting/LEDGER.html">
+            
+                    
+                    Ledger
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Chapter 6 (下)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x624B;&#x52A8;&#x62C6;&#x89E3;&#x300A;quantitative-trading---how-to-build-your-own-algorithmic-trading-business&#x300B;&#xFF08;&#x516D;2&#xFF09;">&#x624B;&#x52A8;&#x62C6;&#x89E3;&#x300A;Quantitative Trading - How to Build Your Own Algorithmic Trading Business&#x300B;&#xFF08;&#x516D;.2&#xFF09;</h1>
+<p>&#x4E0A;&#x4E00;&#x7AE0;&#x7ED3;&#x5C3E;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#x80A1;&#x7968;&#x6295;&#x8D44;&#x4E2D;&#x83B7;&#x5229;&#x6982;&#x7387; P &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#xFF0C;&#x8D54;&#x7387;&#xFF08;&#x6216;&#x8005;&#x56DE;&#x62A5;&#x7387;&#xFF09;&#x4E5F;&#x4E0D;&#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x5FC5;&#x7136;&#x9700;&#x8981;&#x7528;&#x51E0;&#x4E2A;&#x5047;&#x8BBE;&#x6765;&#x754C;&#x5B9A;&#x9002;&#x7528;&#x8303;&#x56F4;&#x3002;&#x6211;&#x4EEC;&#x5047;&#x8BBE;</p>
+<ol>
+<li>&#x6295;&#x8D44;&#x7B56;&#x7565;&#x9009;&#x4E2D;&#x7684;&#x6295;&#x8D44;&#x7EC4;&#x5408;&#x4E2D;&#x7684;&#x80A1;&#x7968;&#x56DE;&#x62A5;&#x662F;&#x7B26;&#x5408;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x7684;&#x3002;&#x8FDB;&#x4E00;&#x6B65;&#x8BF4;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x80A1;&#x7968;&#x56DE;&#x62A5;&#x6709;&#x56FA;&#x5B9A;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#xFF0C;&#x73B0;&#x5728;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x672A;&#x6765;&#x7684;&#x53C2;&#x6570;&#x3002;</li>
+<li>&#x56DE;&#x62A5;&#x7387;&#x6307;&#x7684;&#x662F;&#x6263;&#x9664;&#x4E86;&#x6240;&#x6709;&#x635F;&#x8017;&#x7684;&#x5269;&#x4F59;&#x56DE;&#x62A5;&#x3002;</li>
+<li><p>&#x6240;&#x6709;&#x7684;&#x5229;&#x6DA6;&#x90FD;&#x4F1A;&#x88AB;&#x91CD;&#x65B0;&#x7528;&#x4E8E;&#x6295;&#x8D44;&#x3002;</p>
+</li>
+<li><p>The author initiated the practical application of the Kelly criterion by using it for card counting in blackjack.
+We will present some useful formulas and methods to answer various natural questions
+about it that arise in blackjack and other gambling games. </p>
+</li>
+<li>Then we illustrate its recentuse in a successful casino sports betting system. </li>
+<li>Finally, we discuss its application to the securities markets where it has helped the author to make a thirty year total of 80 billion dollars worth of &#x201C;bets&#x201D;.</li>
+</ol>
+<p><a href="http://www.eecs.harvard.edu/cs286r/courses/fall12/papers/Thorpe_KellyCriterion2007.pdf" target="_blank">http://www.eecs.harvard.edu/cs286r/courses/fall12/papers/Thorpe_KellyCriterion2007.pdf</a></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mi>W</mi><mo>&#x2212;</mo><mo>(</mo><mn>1</mn><mo>&#x2212;</mo><mi>W</mi><mo>)</mo><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">
+f = W - (1 - W) / R
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.13889em;">W</span><span class="mbin">&#x2212;</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">&#x2212;</span><span class="mord mathit" style="margin-right:0.13889em;">W</span><span class="mclose">)</span><span class="mord mathrm">/</span><span class="mord mathit" style="margin-right:0.00773em;">R</span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mi>m</mi><mi mathvariant="normal">/</mi><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">
+f = m / s^2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8641079999999999em;"></span><span class="strut bottom" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord mathrm">/</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></p>
+<p>assume that the return distribution of a strategy (or security) is Gaussian</p>
+<p><a href="https://www.quantstart.com/articles/Money-Management-via-the-Kelly-Criterion/" target="_blank">https://www.quantstart.com/articles/Money-Management-via-the-Kelly-Criterion/</a></p>
+<p> &#x201C;half-Kelly&#x201D; betting.</p>
+<p> long-term compounded growth rate of your equity.</p>
+<p> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mi>r</mi><mo>+</mo><msup><mi>S</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex"> g = r + S^2/2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mbin">+</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span></p>
+<p> I would advise using a lookback period of six months.</p>
+<p> <a href="https://www.investopedia.com/articles/financial-theory/11/calculating-covariance.asp" target="_blank">https://www.investopedia.com/articles/financial-theory/11/calculating-covariance.asp</a></p>
+<p> Dividing the maximum tolera- ble one-period drawdown on equity by the maximum historical loss will tell you whether even half-Kelly leverage is too large for your comfort. </p>
+<ul>
+<li>backtrader init orders</li>
+<li><p>backtrader with kelly&apos;s formula</p>
+<p><a href="https://www.zhihu.com/question/20852004" target="_blank">&#x5982;&#x4F55;&#x901A;&#x4FD7;&#x6613;&#x61C2;&#x5730;&#x89E3;&#x91CA;&#x300C;&#x534F;&#x65B9;&#x5DEE;&#x300D;&#x4E0E;&#x300C;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x300D;&#x7684;&#x6982;&#x5FF5;</a></p>
+<p>&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x548C;&#x534F;&#x65B9;&#x5DEE;&#x7684;&#x5173;&#x7CFB; - &#x6CA1;&#x6709;&#x5173;&#x7CFB;&#x3002;</p>
+<p><a href="https://github.com/kelly-direct/kelly-criterion/blob/master/kelly_criterion/kelly_criterion.py" target="_blank">https://github.com/kelly-direct/kelly-criterion/blob/master/kelly_criterion/kelly_criterion.py</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/20869162" target="_blank">https://zhuanlan.zhihu.com/p/20869162</a></p>
+</li>
+<li><p>if f is negative, remove the stock and wait it to turn positive; we don&apos;t want to sell when no leverage</p>
+</li>
+<li>deal with the positive</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 6 (上)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../payments-systems/" class="navigation navigation-next " aria-label="Next page: Payments Systems">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 6 (下)","description":"手动拆解《Quantitative Trading - How to Build Your Own Algorithmic Trading Business》（六.2）","date":"2020-11-01T15:04:23.000Z","hidden":true,"categories":["Trading"],"tags":["backtrader","quantitative","trading"],"level":"1.3.2.9","depth":3,"next":{"title":"Payments Systems","level":"1.3.3","depth":2,"path":"series/payments-systems/README.md","ref":"series/payments-systems/README.md","articles":[{"title":"1. Introduction","level":"1.3.3.1","depth":3,"path":"series/payments-systems/CHAPTER_1.md","ref":"series/payments-systems/CHAPTER_1.md","articles":[]},{"title":"2. Payments System Overview","level":"1.3.3.2","depth":3,"path":"series/payments-systems/CHAPTER_2.md","ref":"series/payments-systems/CHAPTER_2.md","articles":[]},{"title":"Accounting Introduction","level":"1.3.3.3","depth":3,"path":"series/payments-systems/accounting/INTRO.md","ref":"series/payments-systems/accounting/INTRO.md","articles":[{"title":"Account","level":"1.3.3.3.1","depth":4,"path":"series/payments-systems/accounting/ACCOUNT.md","ref":"series/payments-systems/accounting/ACCOUNT.md","articles":[]},{"title":"Accrual Accounting","level":"1.3.3.3.2","depth":4,"path":"series/payments-systems/accounting/ACCRUAL_ACCOUNTING.md","ref":"series/payments-systems/accounting/ACCRUAL_ACCOUNTING.md","articles":[]},{"title":"Journal","level":"1.3.3.3.3","depth":4,"path":"series/payments-systems/accounting/JOURNAL.md","ref":"series/payments-systems/accounting/JOURNAL.md","articles":[]},{"title":"Ledger","level":"1.3.3.3.4","depth":4,"path":"series/payments-systems/accounting/LEDGER.md","ref":"series/payments-systems/accounting/LEDGER.md","articles":[]}]}]},"previous":{"title":"Chapter 6 (上)","level":"1.3.2.8","depth":3,"path":"series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.md","ref":"series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.2/2020-10-20-qt-htbyoatb-6.2.md","mtime":"2021-07-11T15:13:06.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-11T15:26:17.718Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

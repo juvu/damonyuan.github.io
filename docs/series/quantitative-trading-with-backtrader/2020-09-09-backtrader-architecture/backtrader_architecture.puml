@@ -1,0 +1,61 @@
+@startuml
+actor main
+participant Engine
+participant Strategy
+participant DataFeed
+participant Analyzer
+
+main -> Engine: create a Cerebro entity [1]
+
+main -> DataFeed: load data from data source [2]
+DataFeed --> Engine: add the data to the engine [3]
+
+main -> Strategy: create a strategy [4]
+note right
+There are plenty of indicators built inside the backtrader:
+- SimpleMovingAverage
+- ExponentialMovingAverage
+- WeightedMovingAverage
+- StochasticSlow
+- MACDHisto
+- RSI
+- SmoothedMovingAverage
+- ATR -> AverageTrueRange
+
+Here SimpleMovingAverage is picked for demo purpose
+end note
+Strategy -> Strategy: init references to datas\nand keep track of pending orders [5]
+Strategy -> Strategy: implement next() method which\nis the main body of the strategy [6]
+note right
+use self.position to check if
+we are in the market
+end note
+Strategy -> Strategy: implement notify_order() method\nwhich tracks the order's status [7]
+Strategy -> Strategy: implement notify_trade() method\nwhich tracks the trade's status [8]
+Strategy -> Strategy: implement stop() method\nif optstrategy() is used [9]
+Strategy --> Engine: add/opt the strategy to the engine [10]
+
+main -> Analyzer: add analyzers [11]
+Analyzer --> Engine
+
+Engine -> Engine: set the init cash to\nthe **broker** of the engine [12]
+Engine -> Engine: set the commission to\nthe **broker** of the engine [13]
+Engine -> Engine: add sizer according to\nthe stake [14]
+note right
+sizer controls the size of each buy/sell execution
+end note
+Engine -> Engine: run over everything [15]
+note right
+the platform will first call next
+when all indicators are ready to produce a value
+end note
+Engine --> main: show the backtesting results [16]
+Engine --> main: plot the charts [17]
+note right
+Here you will need to inspect the backtesting results
+of your strategy and decide whether to apply it in real
+transactions
+end note
+
+
+@enduml
