@@ -1,0 +1,74 @@
+@startuml
+actor user
+note left of user
+The result of MVCC
+is that most
+read queries
+never acquire locks.
+end note
+participant InnoDB
+participant transaction
+participant row
+participant "system version number"
+user -> InnoDB: SELECT
+InnoDB -> transaction: start a new transaction
+transaction -> "system version number": get transaction version., eg., 10
+note right
+This is a number that increments
+each time a transaction begins.
+end note
+"system version number" --> transaction: 10
+transaction -> row: check row version and delete version
+row --> transaction: 10, null
+note right
+find a row that meets:
+row version <= transaction version **and**
+(delete version is null **or**
+delete version > transaction version)
+end note
+transaction --> InnoDB
+InnoDB -> transaction: commit
+transaction --> InnoDB
+InnoDB --> user
+
+user -> InnoDB: INSERT
+InnoDB -> transaction: start a new transaction
+transaction -> "system version number": get transaction version., eg., 11
+"system version number" --> transaction: 11
+transaction -> row: create a new row
+row -> "system version number": get the current system version
+"system version number" --> row: update the row version to 11
+row --> transaction
+transaction --> InnoDB
+InnoDB -> transaction: commit
+transaction --> InnoDB
+InnoDB --> user
+
+user -> InnoDB: UPDATE
+InnoDB -> transaction: start a new transaction
+transaction -> "system version number": get transaction version., eg., 12
+"system version number" --> transaction: 12
+transaction -> row: writes a new copy of the row
+row -> "system version number": get the current system version
+"system version number" --> row: update the new copied row's version to 12
+row -> row: write the old row's deletion version to 12
+row --> transaction
+transaction -->InnoDB
+InnoDB -> transaction: commit
+transaction --> InnoDB
+InnoDB --> user
+
+user -> InnoDB: DELETE
+InnoDB -> transaction: start a new transaction
+transaction -> "system version number": get transaction version., eg., 13
+"system version number" --> transaction: 13
+transaction -> row: update the deletion version
+row -> "system version number": get the current system version
+"system version number" --> row: update the row's deletion version to 13
+row --> transaction
+transaction --> InnoDB
+InnoDB -> transaction: commit
+transaction --> InnoDB
+InnoDB --> user
+
+@enduml
