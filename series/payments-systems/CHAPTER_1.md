@@ -1,4 +1,4 @@
-# Introduction
+# 1. Introduction
 
 ## Payments Systems in Hong Kong
 

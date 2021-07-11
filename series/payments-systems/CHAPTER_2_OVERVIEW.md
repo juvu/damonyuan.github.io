@@ -18,6 +18,8 @@
 - Cash
 - The checking system
 - The card systems
+  - Credit card
+  - Debit card
 - The ACH (Automated Clearing House) system
 - The wire transfer systems
 - faster payments / immediate funds transfer system
@@ -136,6 +138,14 @@ Thick or Thin?
 
 - Visa, Mastercard, American Express and PayPal are all examples of what we Visa, Mastercard, American Express and PayPal are all examples of what we call thick model network
 - houses, the ACH, and PIN debit networks are all examples of this “thin model.”
+
+Comparative Overview:
+
+- Ownership & Regulation
+- Operations
+- Type
+- Interchange?
+- Risk Management
 
 ## Cross-border Payments
 
