@@ -80,6 +80,7 @@ So what can be the tools for designing a reliable system which the above 5 chara
     - Backup and Restore
     - Incident Management
     - PIR
+    - maintenance, patching and upgrade: zero downtime upgrade
   - Concurrency
 - load balancer
 - message queue
