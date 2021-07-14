@@ -126,4 +126,10 @@ So what can be the tools for designing a reliable system which the above 5 chara
 - Microservice
 - distributed message queue -> event driven
 - interface driven design
+- Operation
+  - Evidence for business to understand the change
+    - Unit Test Evidence
+    - Integration Evidence
+    - End-to-End Test Evidence
+    - ...
 

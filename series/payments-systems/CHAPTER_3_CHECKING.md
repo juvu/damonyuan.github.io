@@ -13,3 +13,8 @@
      - Equity investors face two risks related to their trading partner: What if a counterparty goes broke before completing the deal, and who sends the cash or stocks first? 
 2. Phases marked by advances in the methodology of clearing and settlement.
    - Phase One: the development of clearing house
+   - Phase Two: Automation - MICR and SORTERS
+   - Phase Three: Imaging 
+3. presenting bank (bank of first deposit) vs paying bank (check writer's bank)
+
+## Roles and the value chain
