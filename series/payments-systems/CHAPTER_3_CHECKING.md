@@ -18,3 +18,21 @@
 3. presenting bank (bank of first deposit) vs paying bank (check writer's bank)
 
 ## Roles and the value chain
+
+## The Pre-Image Clearing Environment
+### The Deposit Bank
+### The Clearing House
+#### Rendezvous
+
+## Image Clearing
+### The Future
+
+## Ownership and Regulation
+
+## Check Use, Volumes and Trends
+
+## Check Economics
+
+### Risk Management 
+
+1. Check Kiting - 空头支票
