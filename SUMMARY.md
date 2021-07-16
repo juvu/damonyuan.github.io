@@ -56,15 +56,6 @@
     * [Chapter 5](series/quantitative-trading-with-backtrader/2020-10-01-qt-htbyoatb-5/2020-10-01-qt-htbyoatb-5.md)
     * [Chapter 6 (上)](series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.md)
     * [Chapter 6 (下)](series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.2/2020-10-20-qt-htbyoatb-6.2.md)
-  * [Payments Systems](series/payments-systems/README.md)
-    * [1. Introduction](series/payments-systems/CHAPTER_1.md)
-    * [2. Payments System Overview](series/payments-systems/CHAPTER_2_OVERVIEW.md)
-    * [3. Core Systems: Checking](series/payments-systems/CHAPTER_3_CHECKING.md)
-    * [Accounting Introduction](series/payments-systems/accounting/INTRO.md)
-      * [Account](series/payments-systems/accounting/ACCOUNT.md)
-      * [Accrual Accounting](series/payments-systems/accounting/ACCRUAL_ACCOUNTING.md)
-      * [Journal](series/payments-systems/accounting/JOURNAL.md)
-      * [Ledger](series/payments-systems/accounting/LEDGER.md)
 
     
 
