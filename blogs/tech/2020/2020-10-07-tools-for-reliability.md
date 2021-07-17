@@ -50,6 +50,12 @@ So what can be the tools for designing a reliable system which the above 5 chara
   - Decision Tree
   - machine learning / Deep Learning / etc  
 
+- CyberSecurity
+  - TLS 1.2
+  - cert pinning
+  - CORS
+  - XSS
+
 ## Performance
 
 - cpu
