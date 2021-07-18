@@ -12,6 +12,32 @@
    - 2018
      -《关于支付机构客户备付金全部集中交存有关事宜的通知》-> 2019年1月14日之前实现备付金100%集中交存央行  
 3. [银行业务中的清算和结算分别是什么样的过程？](https://www.zhihu.com/question/19892912)
+4. In the United States, interchange flows from the acquiring bank to the issuing bank on purchase transactions. As such, interchange is an expense to the acquiring bank and revenue to the card issuing bank. (Note that interchange on ATM transactions flows in reverse—the card issuer pays an interchange fee to the ATM deployer for servicing the issuer’s cardholder.)
+
+5. merchant discount fee includes
+   - interchange
+   - network assessments and fees
+   - others
+
+6. Risk Management
+
+  - KYC before create an account
+  - Manage Authentication and Authorization
+  - Manage Fraud
+    - check the line items in an order and the ammount along with the timestamp
+  - Manage Overdraft if pay through balance
+
+7. E-commerce workflow
+
+   1. cart
+   2. checkout and generate an order
+   3. confirm address, discount, payment method and update the order
+   4. submit the order with line items
+   5. risk management
+   6. prepare payment gateway
+   7. do the transaction
+   8. record the transaction and journaling it into accounts
+   9. reconciliation by the end of the day
 
 # TODO
 
