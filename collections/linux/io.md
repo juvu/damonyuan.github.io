@@ -20,3 +20,6 @@ IO
     - file system
 
 - [深入理解 ext4 等 Linux 文件系统](https://mp.weixin.qq.com/s/sTjsHobMuqn7mQrcL2xeCg)    
+
+- [介绍 Linux 中的管道和命名管道](https://mp.weixin.qq.com/s/7IEycKf31GvOLSBqbpXFLA)
+

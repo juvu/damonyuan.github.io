@@ -17,6 +17,4 @@ shell
     - incident
     - fault location    
 
-- [如何在 Linux 中配置 sudo 访问权限](https://mp.weixin.qq.com/s/sgBlJQAwJWG-b5T1hyycfA)    
-
-- [介绍 Linux 中的管道和命名管道](https://mp.weixin.qq.com/s/7IEycKf31GvOLSBqbpXFLA)
+- [Linux 守护进程的启动方法](http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html)

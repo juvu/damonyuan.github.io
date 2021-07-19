@@ -7,3 +7,5 @@ Memory
     - swap
     - cache
     - buffer
+
+- [为什么 Linux 需要虚拟内存](https://draveness.me/whys-the-design-os-virtual-memory/)    
