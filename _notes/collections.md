@@ -1,7 +1,7 @@
-Collection
+Collections
 ====
 
-My collection of blogs. 
+My collections of blogs. 
 
 - collection
   - dbs
