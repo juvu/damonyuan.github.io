@@ -39,6 +39,13 @@
    8. record the transaction and journaling it into accounts
    9. reconciliation by the end of the day
 
+8. 基本元素
+   - user management
+   - order management
+   - transaction management
+   - payment gateway
+   - ledger   
+
 # TODO
 
 3. [支付系统会计记账设计](https://www.jianshu.com/p/186e72ad5573)     
