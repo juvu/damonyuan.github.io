@@ -32,3 +32,8 @@ Java
   - keywords
     - java
     - jvm  
+
+- Hibernate
+  - blogs
+    - [How does Hibernate store second-level cache entries](https://vladmihalcea.com/how-does-hibernate-store-second-level-cache-entries/)
+    - [A beginner’s guide to Cache synchronization strategies](https://vladmihalcea.com/a-beginners-guide-to-cache-synchronization-strategies/)    

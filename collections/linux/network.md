@@ -23,6 +23,10 @@ Network
 
 ## TCP
 
+- TCP/IP protocol
+  - blogs
+    - [一篇文章带你详解 HTTP 协议（网络协议篇一）](https://www.jianshu.com/p/6e9e4156ece3)
+    - [一篇文章带你熟悉 TCP/IP 协议（网络协议篇二）](https://juejin.cn/post/6844903510509633550)
 
 - [一台Linux服务器最多能支撑多少个TCP连接？](https://cloud.tencent.com/developer/article/1768585)
   - keywords
@@ -50,7 +54,11 @@ Network
 
 # HTTP    
 
-- [几幅图，拿下 HTTPS](https://mp.weixin.qq.com/s/U9SRLE7jZTB6lUZ6c8gTKg)
+- HTTP protocol
+  - blogs
+    - [几幅图，拿下 HTTPS](https://mp.weixin.qq.com/s/U9SRLE7jZTB6lUZ6c8gTKg)
+    - [互联网协议入门（一）](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)    
+    - [互联网协议入门（二）](https://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
   - keyworks
     - linux
     - network
@@ -68,12 +76,17 @@ Network
     - http/2  
     - http/1.1
 
-- [跨域(Access-Control-Allow-Origin)解决方案详解](https://blog.csdn.net/jiabeis/article/details/103459765)
+- CORS, CSRF and XSS
+  - blogs
+    - [跨域(Access-Control-Allow-Origin)解决方案详解](https://blog.csdn.net/jiabeis/article/details/103459765)
+    - [A Deep Dive into CSRF Protection in Rails](https://medium.com/rubyinside/a-deep-dive-into-csrf-protection-in-rails-19fa0a42c0ef)
   - keywords
     - linux
     - network
     - http
     - cors
+    - csrf
+    - xss
 
 - [图解 HTTP 缓存](https://mp.weixin.qq.com/s/2u-IjItCLHgXj3ylHuI9zA)
   - keywords
@@ -81,3 +94,5 @@ Network
     - network
     - http
     - cache
+
+- [HTTP Keep-Alive模式](https://www.cnblogs.com/skynet/archive/2010/12/11/1903347.html)    

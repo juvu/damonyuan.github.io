@@ -13,3 +13,7 @@ DEV
     - architecture
     - diagrams
     - charts  
+
+- regex
+  - sites
+    - [rubular](http://www.rubular.com/)

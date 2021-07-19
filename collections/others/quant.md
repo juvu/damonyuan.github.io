@@ -22,4 +22,8 @@ Quant
     - quant
     - bayes    
 
+- [贝叶斯优化/Bayesian Optimization](https://zhuanlan.zhihu.com/p/76269142)    
+
 - [蒙特卡罗方法入门](https://mp.weixin.qq.com/s/gfKSRUMMXlfmYlxcDWPGog)    
+
+- [公众号「王的机器」所有文章汇总](https://zhuanlan.zhihu.com/p/88307466)
