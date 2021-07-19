@@ -1,4 +1,4 @@
-README.md
+Collection
 ====
 
 My collection of blogs. 
