@@ -48,7 +48,9 @@ My collection of blogs.
         - [How does Hibernate store second-level cache entries](https://vladmihalcea.com/how-does-hibernate-store-second-level-cache-entries/)
         - [A beginner’s guide to Cache synchronization strategies](https://vladmihalcea.com/a-beginners-guide-to-cache-synchronization-strategies/)    
       - Architecture  
-        - - [贫血，充血模型的解释以及一些经验](https://www.oschina.net/question/54100_10400)    
+        - [贫血，充血模型的解释以及一些经验](https://www.oschina.net/question/54100_10400)    
+      - others
+        - [How to create Immutable class in Java?](https://www.geeksforgeeks.org/create-immutable-class-java/)  
     
     - javascript
       - stream
