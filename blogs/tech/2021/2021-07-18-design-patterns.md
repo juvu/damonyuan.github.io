@@ -1,6 +1,6 @@
 # Design Patterns
 
-## Interface Driven Design Patterns
+## Interface Driven Patterns
 
 ### Strategy Pattern
 
@@ -317,7 +317,7 @@ public interface Listener {
 
 ### Memo Pattern
 
-This pattern is quite common in frontend application for preparing the data to be submitted to the backend. 
+This pattern is quite common in frontend application when preparing the data to be submitted to the backend. 
 
 ```
 class Data {
