@@ -1238,12 +1238,134 @@ public static void main(String[] args) {
         // depends on the context
     }
 }
-</code></pre><h2 id="todo">TODO</h2>
-<h3 id="composite-pattern">Composite Pattern</h3>
-<p>TODO</p>
-<h3 id="iterator-pattern">Iterator Pattern</h3>
-<p>TODO</p>
-<h3 id="bridge-pattern">Bridge Pattern</h3>
+</code></pre><h3 id="composite-pattern">Composite Pattern</h3>
+<p>Composite Pattern combines objects into a tree structure to represent the &quot;part-whole&quot; hierarchy.</p>
+<pre><code>public interface Component {
+    void add(Component c);
+    void remove(Component c);
+    void display(int depth);
+}
+
+class Leaf implements Component {
+    private String name;
+
+    public Leaf(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void add(Component c) {
+        // do nothing since it&apos;s a leaf node
+    }
+
+    @Override
+    public void remove(Component c) {
+        // do nothing since it&apos;s a leaf node
+    }
+
+    @Override
+    public void display(int depth) {
+        System.out.println(new String(new char[depth]).replace(&quot;\0&quot;, &quot;-&quot;) + &quot; &quot; + name);
+    }
+}
+
+class Composite implements Component {
+    private List&lt;Component&gt; list = new ArrayList&lt;&gt;();
+    private String name;
+
+    public Composite(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void add(Component c) {
+        list.add(c);
+    }
+
+    @Override
+    public void remove(Component c) {
+        list.remove(c);
+    }
+
+    @Override
+    public void display(int depth) {
+        System.out.println(new String(new char[depth]).replace(&quot;\0&quot;, &quot;-&quot;) + &quot; &quot; + name);
+        for (Component c : list) {
+            c.display(depth);
+        }
+    }
+}
+
+public static void main(String[] args) {
+    Composite root = new Composite(&quot;root&quot;);
+    root.add(new Leaf(&quot;Left&quot;));
+    root.add(new Leaf(&quot;Right&quot;));
+
+    root.display(1);
+}
+</code></pre><p>Actually it&apos;s a preorder tree traversal which can be implemented as</p>
+<pre><code>class Node {
+    private List&lt;Node&gt; leaves = new ArrayList&lt;&gt;();
+    private String name;
+
+    public Node(String name) {
+        this.name = name;
+    }
+
+    public void add(Node node) {
+        this.leaves.add(node);
+    }
+
+    public void remove(Node node) {
+        this.leaves.remove(node);
+    }
+
+    public void visit(int depth) {
+        System.out.println(new String(new char[depth]).replace(&quot;\0&quot;, &quot;-&quot;) + &quot; &quot; + name);
+        for (Node n : this.leaves) {
+            n.visit(depth + 1);
+        }
+    }
+}
+</code></pre><h3 id="iterator-pattern">Iterator Pattern</h3>
+<p>In Java there are <code>Iterator&lt;T&gt;</code> interface and <code>Iterable&lt;T&gt;</code> interface. The <code>Iterable&lt;T&gt;</code> requires an implementation of <code>Iterator&lt;T&gt; iterator();</code> to return an <code>Iterator&lt;T&gt;</code> object. The <code>Iterator&lt;T&gt;</code> requires the implementation of <code>boolean hasNext();</code> and <code>T next();</code> methods.</p>
+<pre><code>class Ledger implements Iterable&lt;String&gt; {
+    private String[] records = new String[] { &quot;1st record&quot;, &quot;2nd record&quot;, &quot;3rd record&quot; };
+
+    @Override
+    public Iterator&lt;String&gt; iterator() {
+        return new RecordIterator(0);
+    }
+
+    private class RecordIterator implements Iterator&lt;String&gt; {
+        private int pos;
+
+        RecordIterator(int pos) {
+            this.pos = pos;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return this.pos &lt; records.length - 1;
+        }
+
+        @Override
+        public String next() {
+            // thread-unsafe here
+            return records[++this.pos];
+        }
+    }
+}
+
+public static void main(String[] args) {
+    Ledger ledger = new Ledger();
+    Iterator&lt;String&gt; iterator = ledger.iterator();
+    while(iterator.hasNext()) {
+        String record = iterator.next();
+        System.out.println(record);
+    }
+}
+</code></pre><h3 id="bridge-pattern">Bridge Pattern</h3>
 <p>TODO</p>
 <h3 id="command-pattern">Command Pattern</h3>
 <p>TODO</p>
@@ -1296,7 +1418,7 @@ public static void main(String[] args) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Design Patterns","level":"1.2.1.1","depth":3,"next":{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]},"previous":{"title":"2021","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"Design Patterns","level":"1.2.1.1","depth":3,"path":"blogs/tech/2021/2021-07-18-design-patterns.md","ref":"blogs/tech/2021/2021-07-18-design-patterns.md","articles":[]},{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex","ga"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-92600235-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blogs/tech/2021/2021-07-18-design-patterns.md","mtime":"2021-07-19T16:33:39.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-19T16:33:44.973Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Design Patterns","level":"1.2.1.1","depth":3,"next":{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]},"previous":{"title":"2021","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"Design Patterns","level":"1.2.1.1","depth":3,"path":"blogs/tech/2021/2021-07-18-design-patterns.md","ref":"blogs/tech/2021/2021-07-18-design-patterns.md","articles":[]},{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex","ga"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-92600235-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blogs/tech/2021/2021-07-18-design-patterns.md","mtime":"2021-07-20T05:52:05.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-20T05:52:56.067Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

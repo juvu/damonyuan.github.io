@@ -357,16 +357,147 @@ public static void main(String[] args) {
 }
 ```
 
-
-## TODO
-
 ### Composite Pattern
 
-TODO
+Composite Pattern combines objects into a tree structure to represent the "part-whole" hierarchy.
+
+```
+public interface Component {
+    void add(Component c);
+    void remove(Component c);
+    void display(int depth);
+}
+
+class Leaf implements Component {
+    private String name;
+
+    public Leaf(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void add(Component c) {
+        // do nothing since it's a leaf node
+    }
+
+    @Override
+    public void remove(Component c) {
+        // do nothing since it's a leaf node
+    }
+
+    @Override
+    public void display(int depth) {
+        System.out.println(new String(new char[depth]).replace("\0", "-") + " " + name);
+    }
+}
+
+class Composite implements Component {
+    private List<Component> list = new ArrayList<>();
+    private String name;
+
+    public Composite(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void add(Component c) {
+        list.add(c);
+    }
+
+    @Override
+    public void remove(Component c) {
+        list.remove(c);
+    }
+
+    @Override
+    public void display(int depth) {
+        System.out.println(new String(new char[depth]).replace("\0", "-") + " " + name);
+        for (Component c : list) {
+            c.display(depth);
+        }
+    }
+}
+
+public static void main(String[] args) {
+    Composite root = new Composite("root");
+    root.add(new Leaf("Left"));
+    root.add(new Leaf("Right"));
+
+    root.display(1);
+}
+
+```
+
+Actually it's a preorder tree traversal which can be implemented as
+
+```
+class Node {
+    private List<Node> leaves = new ArrayList<>();
+    private String name;
+
+    public Node(String name) {
+        this.name = name;
+    }
+
+    public void add(Node node) {
+        this.leaves.add(node);
+    }
+
+    public void remove(Node node) {
+        this.leaves.remove(node);
+    }
+
+    public void visit(int depth) {
+        System.out.println(new String(new char[depth]).replace("\0", "-") + " " + name);
+        for (Node n : this.leaves) {
+            n.visit(depth + 1);
+        }
+    }
+}
+```
 
 ### Iterator Pattern
 
-TODO
+In Java there are `Iterator<T>` interface and `Iterable<T>` interface. The `Iterable<T>` requires an implementation of `Iterator<T> iterator();` to return an `Iterator<T>` object. The `Iterator<T>` requires the implementation of `boolean hasNext();` and `T next();` methods.
+
+```
+class Ledger implements Iterable<String> {
+    private String[] records = new String[] { "1st record", "2nd record", "3rd record" };
+
+    @Override
+    public Iterator<String> iterator() {
+        return new RecordIterator(0);
+    }
+
+    private class RecordIterator implements Iterator<String> {
+        private int pos;
+
+        RecordIterator(int pos) {
+            this.pos = pos;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return this.pos < records.length - 1;
+        }
+
+        @Override
+        public String next() {
+            // thread-unsafe here
+            return records[++this.pos];
+        }
+    }
+}
+
+public static void main(String[] args) {
+    Ledger ledger = new Ledger();
+    Iterator<String> iterator = ledger.iterator();
+    while(iterator.hasNext()) {
+        String record = iterator.next();
+        System.out.println(record);
+    }
+}
+```
 
 ### Bridge Pattern
 
