@@ -953,7 +953,8 @@
                                 
                                 <h1 id="design-patterns">Design Patterns</h1>
 <h2 id="interface-driven-patterns">Interface Driven Patterns</h2>
-<h3 id="strategy-pattern">Strategy Pattern</h3>
+<h3 id="strategy-pattern--bridge-pattern">Strategy Pattern / Bridge Pattern</h3>
+<p>This pattern is one of the incarnation of Dependency Injection.</p>
 <pre><code>class StrategyContext {
     private Strategy strategy;
     public StrategyContext(Strategy strategy) {
@@ -1043,6 +1044,7 @@ Class BeggerAdaptor implements Worker {
     }
 }
 </code></pre><p>OperationAdd and OperationMinus classes implement Operation interface.</p>
+<p>Note that from my perspective of view <strong>Factory Pattern</strong> and <strong>Abstract Factory</strong> Pattern don&apos;t provide much value to simplify the program or make the logic clearer, so that I would prefer not to introduce them here.</p>
 <h3 id="builder-pattern">Builder Pattern</h3>
 <pre><code>Class ContextBuilder {
     String color;
@@ -1097,7 +1099,44 @@ public static void main(string[] args) {
 <p>Interface-oriented programming.</p>
 <h3 id="lod-principle">LoD Principle</h3>
 <p>The Law of Demeter (LoD) or principle of least knowledge is a design guideline for developing software, particularly object-oriented programs.</p>
-<h2 id="others">Others</h2>
+<h2 id="changing-states">Changing States</h2>
+<h3 id="chain-of-responsibility-pattern">Chain of Responsibility Pattern</h3>
+<pre><code>public interface Handler {
+    void setSuccessor(Handler hanlder);
+    void handle(int i);
+}
+
+class AtaskHandler implements Handler {
+    private Handler successor = null;
+    @Override
+    public void setSuccessor(Handler handler) {
+        this.successor = handler;
+    }
+    @Override
+    public void handle(int i) {
+        if (this.successor) {
+            this.successor.handle(i + 1);
+        }
+    }
+}
+</code></pre><p>And there is another more common pattern which is widely used in servlet, </p>
+<pre><code>public interface Handler {
+    void handle(int i);
+}
+class Processor implements Handler {
+    private List&lt;Handler&gt; handlers = new ArrayList&lt;&gt;();
+    public void register(Handler handler) {
+        handlers.add(handler);
+    }
+
+    @Override
+    public void handle(int i) {
+        for (int j = 0; j &lt; this.handlers.size(); j++) {
+            h.handler(i + j);
+        }
+    }
+}
+</code></pre><p>In this way the handlers don&apos;t have to the successor of itself.</p>
 <h3 id="states-pattern">States Pattern</h3>
 <pre><code>public interface State {
     void handle(Context context);
@@ -1146,6 +1185,7 @@ public static void main(String[] args) {
 
 }
 </code></pre><p>In this way the business logic for different states is implemented in the related State, and the correlation between different business units is reduced. </p>
+<h2 id="others">Others</h2>
 <h3 id="template-pattern">Template Pattern</h3>
 <pre><code>abstract class AbstractClass {
     public void templateMethod {
@@ -1365,13 +1405,7 @@ public static void main(String[] args) {
         System.out.println(record);
     }
 }
-</code></pre><h3 id="bridge-pattern">Bridge Pattern</h3>
-<p>TODO</p>
-<h3 id="command-pattern">Command Pattern</h3>
-<p>TODO</p>
-<h3 id="chain-of-responsibility-pattern">Chain of Responsibility Pattern</h3>
-<p>TODO</p>
-<h3 id="mediator-pattern">Mediator Pattern</h3>
+</code></pre><h3 id="mediator-pattern">Mediator Pattern</h3>
 <p>TODO</p>
 <h3 id="flyweight-pattern">Flyweight Pattern</h3>
 <p>TODO</p>
@@ -1418,7 +1452,7 @@ public static void main(String[] args) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Design Patterns","level":"1.2.1.1","depth":3,"next":{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]},"previous":{"title":"2021","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"Design Patterns","level":"1.2.1.1","depth":3,"path":"blogs/tech/2021/2021-07-18-design-patterns.md","ref":"blogs/tech/2021/2021-07-18-design-patterns.md","articles":[]},{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex","ga"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-92600235-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blogs/tech/2021/2021-07-18-design-patterns.md","mtime":"2021-07-20T05:52:05.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-20T05:52:56.067Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Design Patterns","level":"1.2.1.1","depth":3,"next":{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]},"previous":{"title":"2021","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"Design Patterns","level":"1.2.1.1","depth":3,"path":"blogs/tech/2021/2021-07-18-design-patterns.md","ref":"blogs/tech/2021/2021-07-18-design-patterns.md","articles":[]},{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex","ga"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-92600235-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blogs/tech/2021/2021-07-18-design-patterns.md","mtime":"2021-07-20T08:10:27.904Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-20T08:10:33.658Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2,7 +2,9 @@
 
 ## Interface Driven Patterns
 
-### Strategy Pattern
+### Strategy Pattern / Bridge Pattern
+
+This pattern is one of the incarnation of Dependency Injection.
 
 ```
 class StrategyContext {
@@ -124,6 +126,8 @@ public class OperationFactory {
 
 OperationAdd and OperationMinus classes implement Operation interface.
 
+Note that from my perspective of view **Factory Pattern** and **Abstract Factory** Pattern don't provide much value to simplify the program or make the logic clearer, so that I would prefer not to introduce them here.
+
 ### Builder Pattern
 
 ```
@@ -192,7 +196,53 @@ Interface-oriented programming.
 
 The Law of Demeter (LoD) or principle of least knowledge is a design guideline for developing software, particularly object-oriented programs.
 
-## Others
+## Changing States
+
+### Chain of Responsibility Pattern
+
+```
+public interface Handler {
+    void setSuccessor(Handler hanlder);
+    void handle(int i);
+}
+
+class AtaskHandler implements Handler {
+    private Handler successor = null;
+    @Override
+    public void setSuccessor(Handler handler) {
+        this.successor = handler;
+    }
+    @Override
+    public void handle(int i) {
+        if (this.successor) {
+            this.successor.handle(i + 1);
+        }
+    }
+}
+```
+
+And there is another more common pattern which is widely used in servlet, 
+
+```
+public interface Handler {
+    void handle(int i);
+}
+class Processor implements Handler {
+    private List<Handler> handlers = new ArrayList<>();
+    public void register(Handler handler) {
+        handlers.add(handler);
+    }
+
+    @Override
+    public void handle(int i) {
+        for (int j = 0; j < this.handlers.size(); j++) {
+            h.handler(i + j);
+        }
+    }
+}
+```
+
+In this way the handlers don't have to the successor of itself.
 
 ### States Pattern
 
@@ -246,6 +296,8 @@ public static void main(String[] args) {
 ```
 
 In this way the business logic for different states is implemented in the related State, and the correlation between different business units is reduced. 
+
+## Others
 
 ### Template Pattern
 
@@ -498,18 +550,6 @@ public static void main(String[] args) {
     }
 }
 ```
-
-### Bridge Pattern
-
-TODO
-
-### Command Pattern
-
-TODO
-
-### Chain of Responsibility Pattern
-
-TODO
 
 ### Mediator Pattern
 
