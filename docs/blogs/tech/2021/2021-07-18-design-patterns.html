@@ -1107,7 +1107,7 @@ public static void main(string[] args) {
 </code></pre><p>Here we set the options for the builder and finally it will create the instance based on the requirement. </p>
 <h3 id="prototype-pattern">Prototype Pattern</h3>
 <p>It&apos;s just to implement the Cloneable interface in java. Note that if you want to create a immutable class, you should follow <a href="https://www.geeksforgeeks.org/create-immutable-class-java/" target="_blank">How to create Immutable class in Java?</a> and use deep copy instead of shallow copy.</p>
-<h2 id="changing-states">Changing States</h2>
+<h2 id="changing-context">Changing Context</h2>
 <h3 id="chain-of-responsibility-pattern">Chain of Responsibility Pattern</h3>
 <pre><code>public interface Handler {
     void setSuccessor(Handler hanlder);
@@ -1193,6 +1193,61 @@ public static void main(String[] args) {
 
 }
 </code></pre><p>In this way the business logic for different states is implemented in the related State, and the correlation between different business units is reduced. </p>
+<h3 id="interpreter-pattern">Interpreter Pattern</h3>
+<pre><code>class Context {
+    private String value;
+    public Context(String v) {
+        this.value = v;
+    }
+}
+public interface Expression {
+    void interpret(Context context);
+}
+</code></pre><p>Here the concrete <code>Expression</code> classes will interpret the context accordingly. This pattern can be used in syntax tree (I don&apos;t quite understand this, anyone can give an illustration?).</p>
+<h3 id="visitor-pattern">Visitor Pattern</h3>
+<pre><code>public interface Visitor {
+    void visit(Element e);
+}
+public interface Element {
+    void accept(Visitor v);
+}
+public class ConcreteVisitor implements Visitor {
+    @Override
+    public void visit(Element e) {
+        // TODO:
+    }
+}
+public class ConcreteElement implements Element {
+    @Override
+    public void accept(Visitor v) {
+        v.visit(this);
+    }
+}
+class Entirety implements Element {
+    private List&lt;Element&gt; elements = new ArrayList&lt;&gt;();
+
+    public void add(Element e) {
+        elements.add(e);
+    }
+
+    public void remove(Element e) {
+        elements.remove(e);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        for (Element e : this.elements) {
+            e.accept(v);
+        }
+    }
+}
+public static void main(String[] args) {
+    Visitor v = new ConcreteVisitor();
+    Entirety e = new Entirety();
+    e.add(new ConcreteElement());
+    e.accept(v);
+}
+</code></pre><p>This pattern encapsulates the elements inside an <code>Entirety</code> object and allows the <code>Visitor</code> instances to visit it&apos;s internal elements.</p>
 <h2 id="others">Others</h2>
 <h3 id="template-pattern">Template Pattern</h3>
 <pre><code>abstract class AbstractClass {
@@ -1451,61 +1506,6 @@ class Person implements Participant {
     }
 }
 </code></pre><p>Here the implementation is one to one, obviously the business case might be many-to-many, and then the logic wrapped inside the mediator would be more complicated.</p>
-<h3 id="interpreter-pattern">Interpreter Pattern</h3>
-<pre><code>class Context {
-    private String value;
-    public Context(String v) {
-        this.value = v;
-    }
-}
-public interface Expression {
-    void interpret(Context context);
-}
-</code></pre><p>Here the concrete <code>Expression</code> classes will interpret the context accordingly. This pattern can be used in syntax tree (I don&apos;t quite understand this, anyone can give an illustration?).</p>
-<h3 id="visitor-pattern">Visitor Pattern</h3>
-<pre><code>public interface Visitor {
-    void visit(Element e);
-}
-public interface Element {
-    void accept(Visitor v);
-}
-public class ConcreteVisitor implements Visitor {
-    @Override
-    public void visit(Element e) {
-        // TODO:
-    }
-}
-public class ConcreteElement implements Element {
-    @Override
-    public void accept(Visitor v) {
-        v.visit(this);
-    }
-}
-class Entirety implements Element {
-    private List&lt;Element&gt; elements = new ArrayList&lt;&gt;();
-
-    public void add(Element e) {
-        elements.add(e);
-    }
-
-    public void remove(Element e) {
-        elements.remove(e);
-    }
-
-    @Override
-    public void accept(Visitor v) {
-        for (Element e : this.elements) {
-            e.accept(v);
-        }
-    }
-}
-public static void main(String[] args) {
-    Visitor v = new ConcreteVisitor();
-    Entirety e = new Entirety();
-    e.add(new ConcreteElement());
-    e.accept(v);
-}
-</code></pre><p>This pattern encapsulates the elements inside an <code>Entirety</code> object and allows the <code>Visitor</code> instances to visit it&apos;s internal elements.</p>
 <h2 id="principles">Principles</h2>
 <h3 id="srp">SRP</h3>
 <p>Single Responsibility Principle.</p>
@@ -1557,7 +1557,7 @@ public static void main(String[] args) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Design Patterns","level":"1.2.1.1","depth":3,"next":{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]},"previous":{"title":"2021","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"Design Patterns","level":"1.2.1.1","depth":3,"path":"blogs/tech/2021/2021-07-18-design-patterns.md","ref":"blogs/tech/2021/2021-07-18-design-patterns.md","articles":[]},{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex","ga"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-92600235-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blogs/tech/2021/2021-07-18-design-patterns.md","mtime":"2021-07-20T11:54:10.027Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-20T11:54:14.296Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Design Patterns","level":"1.2.1.1","depth":3,"next":{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]},"previous":{"title":"2021","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"Design Patterns","level":"1.2.1.1","depth":3,"path":"blogs/tech/2021/2021-07-18-design-patterns.md","ref":"blogs/tech/2021/2021-07-18-design-patterns.md","articles":[]},{"title":"GCP Products","level":"1.2.1.2","depth":3,"path":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","ref":"blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex","ga"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-92600235-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blogs/tech/2021/2021-07-18-design-patterns.md","mtime":"2021-07-20T11:55:50.768Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-20T11:55:52.796Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

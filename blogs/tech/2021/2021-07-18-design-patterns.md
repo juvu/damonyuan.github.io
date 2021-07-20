@@ -204,7 +204,7 @@ Here we set the options for the builder and finally it will create the instance 
 
 It's just to implement the Cloneable interface in java. Note that if you want to create a immutable class, you should follow [How to create Immutable class in Java?](https://www.geeksforgeeks.org/create-immutable-class-java/) and use deep copy instead of shallow copy.
 
-## Changing States
+## Changing Context
 
 ### Chain of Responsibility Pattern
 
@@ -304,6 +304,70 @@ public static void main(String[] args) {
 ```
 
 In this way the business logic for different states is implemented in the related State, and the correlation between different business units is reduced. 
+
+### Interpreter Pattern
+
+```
+class Context {
+    private String value;
+    public Context(String v) {
+        this.value = v;
+    }
+}
+public interface Expression {
+    void interpret(Context context);
+}
+```
+
+Here the concrete `Expression` classes will interpret the context accordingly. This pattern can be used in syntax tree (I don't quite understand this, anyone can give an illustration?).
+
+### Visitor Pattern 
+
+```
+public interface Visitor {
+    void visit(Element e);
+}
+public interface Element {
+    void accept(Visitor v);
+}
+public class ConcreteVisitor implements Visitor {
+    @Override
+    public void visit(Element e) {
+        // TODO:
+    }
+}
+public class ConcreteElement implements Element {
+    @Override
+    public void accept(Visitor v) {
+        v.visit(this);
+    }
+}
+class Entirety implements Element {
+    private List<Element> elements = new ArrayList<>();
+
+    public void add(Element e) {
+        elements.add(e);
+    }
+
+    public void remove(Element e) {
+        elements.remove(e);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        for (Element e : this.elements) {
+            e.accept(v);
+        }
+    }
+}
+public static void main(String[] args) {
+    Visitor v = new ConcreteVisitor();
+    Entirety e = new Entirety();
+    e.add(new ConcreteElement());
+    e.accept(v);
+}
+```
+This pattern encapsulates the elements inside an `Entirety` object and allows the `Visitor` instances to visit it's internal elements.
 
 ## Others
 
@@ -602,71 +666,6 @@ class Person implements Participant {
 ```
 
 Here the implementation is one to one, obviously the business case might be many-to-many, and then the logic wrapped inside the mediator would be more complicated.
-
-
-### Interpreter Pattern
-
-```
-class Context {
-    private String value;
-    public Context(String v) {
-        this.value = v;
-    }
-}
-public interface Expression {
-    void interpret(Context context);
-}
-```
-
-Here the concrete `Expression` classes will interpret the context accordingly. This pattern can be used in syntax tree (I don't quite understand this, anyone can give an illustration?).
-
-### Visitor Pattern 
-
-```
-public interface Visitor {
-    void visit(Element e);
-}
-public interface Element {
-    void accept(Visitor v);
-}
-public class ConcreteVisitor implements Visitor {
-    @Override
-    public void visit(Element e) {
-        // TODO:
-    }
-}
-public class ConcreteElement implements Element {
-    @Override
-    public void accept(Visitor v) {
-        v.visit(this);
-    }
-}
-class Entirety implements Element {
-    private List<Element> elements = new ArrayList<>();
-
-    public void add(Element e) {
-        elements.add(e);
-    }
-
-    public void remove(Element e) {
-        elements.remove(e);
-    }
-
-    @Override
-    public void accept(Visitor v) {
-        for (Element e : this.elements) {
-            e.accept(v);
-        }
-    }
-}
-public static void main(String[] args) {
-    Visitor v = new ConcreteVisitor();
-    Entirety e = new Entirety();
-    e.add(new ConcreteElement());
-    e.accept(v);
-}
-```
-This pattern encapsulates the elements inside an `Entirety` object and allows the `Visitor` instances to visit it's internal elements.
 
 ## Principles
 
