@@ -128,6 +128,33 @@ OperationAdd and OperationMinus classes implement Operation interface.
 
 Note that from my perspective of view **Factory Pattern** and **Abstract Factory** Pattern don't provide much value to simplify the program or make the logic clearer, so that I would prefer not to introduce them here.
 
+### Flyweight Pattern
+
+This pattern is to reduce the cost of resource on recreating instances, one common example is Java String.
+
+```
+public class FlyWeight {
+    private String name;
+    public FlyWeight(String name) {
+        this.name = name;
+    }
+}
+class FlyWeightFactory {
+    private HashMap<String, FlyWeight> flyweights = new HashMap<>();
+
+    public FlyWeight getFlyWeight(String name) {
+        if (!flyweights.keySet().contains(name)) {
+            flyweights.add(new FlyWeight(name));
+        }
+        return flyweight.get(name);
+    }
+}
+```
+
+In Java the strings with the same value are actually refering to the same underlying object. Although the resource used by creating a string is not substantial, because the number of operations is large, it still impact tremendously on the program overall.
+
+Note that in Simple Factory Pattern a new object is always returned, however in FlyWeight Pattern, only when there is no such instance will a new object be created and returned.
+
 ### Builder Pattern
 
 ```
@@ -176,25 +203,6 @@ Here we set the options for the builder and finally it will create the instance 
 ### Prototype Pattern
 
 It's just to implement the Cloneable interface in java. Note that if you want to create a immutable class, you should follow [How to create Immutable class in Java?](https://www.geeksforgeeks.org/create-immutable-class-java/) and use deep copy instead of shallow copy.
-
-## Principles
-
-### SRP
-
-Single Responsibility Principle.
-
-### Open-Close Principle
-
-- Open to extension
-- Closed to modification
-
-### Dependency Inversion Principle
-
-Interface-oriented programming.
-
-### LoD Principle
-
-The Law of Demeter (LoD) or principle of least knowledge is a design guideline for developing software, particularly object-oriented programs.
 
 ## Changing States
 
@@ -553,17 +561,129 @@ public static void main(String[] args) {
 
 ### Mediator Pattern
 
-TODO
+```
+public interface Participant {
+    void send(String msg);
+    void receive(String msg);
+}
 
-### Flyweight Pattern
+class Mediator {
+    private Participant[] participants;
 
-TODO
+    public Mediator(Participant a, Participant b) {
+        this.participants = new Participant[] { a, b };
+    }
+
+    public void send(String msg, Participant sender) {
+        if (sender == this.participants[0]) {
+            this.participants[1].recieve(msg);
+        } else {
+            this.participants[0].recieve(msg);
+        }
+    }
+}
+
+class Person implements Participant {
+    private Mediator mediator;
+    public Person(Mediator mediator) {
+        this.mediator = mediator;
+    }
+    @Override
+    public void send(String msg) {
+        this.mediator.send(msg, this);
+    }
+
+    @Override
+    public void receive(String msg) {
+        System.out.println(msg);
+    }
+}
+
+```
+
+Here the implementation is one to one, obviously the business case might be many-to-many, and then the logic wrapped inside the mediator would be more complicated.
+
 
 ### Interpreter Pattern
 
-TODO
+```
+class Context {
+    private String value;
+    public Context(String v) {
+        this.value = v;
+    }
+}
+public interface Expression {
+    void interpret(Context context);
+}
+```
+
+Here the concrete `Expression` classes will interpret the context accordingly. This pattern can be used in syntax tree (I don't quite understand this, anyone can give an illustration?).
 
 ### Visitor Pattern 
 
-TODO
+```
+public interface Visitor {
+    void visit(Element e);
+}
+public interface Element {
+    void accept(Visitor v);
+}
+public class ConcreteVisitor implements Visitor {
+    @Override
+    public void visit(Element e) {
+        // TODO:
+    }
+}
+public class ConcreteElement implements Element {
+    @Override
+    public void accept(Visitor v) {
+        v.visit(this);
+    }
+}
+class Entirety implements Element {
+    private List<Element> elements = new ArrayList<>();
+
+    public void add(Element e) {
+        elements.add(e);
+    }
+
+    public void remove(Element e) {
+        elements.remove(e);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        for (Element e : this.elements) {
+            e.accept(v);
+        }
+    }
+}
+public static void main(String[] args) {
+    Visitor v = new ConcreteVisitor();
+    Entirety e = new Entirety();
+    e.add(new ConcreteElement());
+    e.accept(v);
+}
+```
+This pattern encapsulates the elements inside an `Entirety` object and allows the `Visitor` instances to visit it's internal elements.
+
+## Principles
+
+### SRP
+
+Single Responsibility Principle.
+
+### Open-Close Principle
+
+- Open to extension
+- Closed to modification
+
+### Dependency Inversion Principle
+
+Interface-oriented programming.
+
+### LoD Principle
+
+The Law of Demeter (LoD) or principle of least knowledge is a design guideline for developing software, particularly object-oriented programs.
 
