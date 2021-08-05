@@ -8,7 +8,7 @@
   * 2020  
     * [Python Metaclass](blogs/tech/2020/2020-10-31-python-metaclass.md)
     * [Tools for Reliability](blogs/tech/2020/2020-10-07-tools-for-reliability.md)
-    * [MVCC](blogs/tech/2020-09-10-MVCC/2020/2020-09-10-MVCC.md)
+    * [MVCC](blogs/tech/2020/2020-09-10-MVCC/2020-09-10-MVCC.md)
     * [Shards, Replicas and Nodes](blogs/tech/2020/2020-07-21-shards-replicas-and-nodes.md)
     * [Call a Class Method from an Instance in Python](blogs/tech/2020/2020-02-24-call-a-class-method-from-an-instance-in-python/2020-02-24-call-a-class-method-from-an-instance-in-python.md)
     * [MVVM vs Redux](blogs/tech/2020/2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.md)
