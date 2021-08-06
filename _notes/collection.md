@@ -153,3 +153,5 @@ My collection of blogs.
     - [阮一峰](https://www.ruanyifeng.com/blog/)
     - [公众号「王的机器」所有文章汇总](https://zhuanlan.zhihu.com/p/88307466)
     
+  - business analysis
+    - [KPI Library](http://www.kpilibrary.com)    
