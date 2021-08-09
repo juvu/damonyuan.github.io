@@ -5,6 +5,7 @@
   * 2021
     * [Design Patterns](blogs/tech/2021/2021-07-18-design-patterns.md)
     * [GCP Products](blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md)
+    * [Microservice Caveat](blogs/tech/2021/2021-08-10-microservice-caveat.md)
   * 2020  
     * [Python Metaclass](blogs/tech/2020/2020-10-31-python-metaclass.md)
     * [Tools for Reliability](blogs/tech/2020/2020-10-07-tools-for-reliability.md)
