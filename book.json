@@ -9,5 +9,8 @@
     "ga": {
         "token": "UA-92600235-2"
     }
-}
+  },
+  "styles": {
+    "website": "styles/website.css"
+  }
 }
