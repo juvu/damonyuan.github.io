@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * Blogs
   * 2021
+    * [Statistical Significance](blogs/tech/2021/2021-08-10-statistical-significance/2021-08-10-statistical-significance.md)
     * [Microservice Caveat](blogs/tech/2021/2021-08-10-microservice-caveat.md)
     * [Design Patterns](blogs/tech/2021/2021-07-18-design-patterns.md)
     * [GCP Products](blogs/tech/2021/2021-01-08-gcp-products/2021-01-08-gcp-products.md)
