@@ -11,6 +11,6 @@ tags: [GCP]
 
 ![Securities Operations](https://images-na.ssl-images-amazon.com/images/I/41tIGHfXv2L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg "Securities Operations")
 
-This flowchart is to deepen my understanding of the content in this book.
+The flowchart is to deepen my understanding of the content in this book.
 
 ![GCP](securities-operations.svg "Securities Operations Flowchart")
