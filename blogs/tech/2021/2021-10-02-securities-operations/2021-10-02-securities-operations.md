@@ -1,7 +1,7 @@
 ---
 title:  "Securities Operations"
 description: "Securities Operations"
-date: 2021-01-08 15:04:23
+date: 2021-10-02 15:04:23
 hidden: false
 categories: [Tech]
 tags: [GCP]
