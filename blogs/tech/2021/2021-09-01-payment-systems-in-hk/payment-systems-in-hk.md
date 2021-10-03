@@ -43,7 +43,7 @@ There is nothing special either here in HK.
 
 Credit Cards Payment is the same with the rest of the world and it's pull-based. 
 
-![credit cards](cards.svg "credit cards")
+![credit cards](cards.gif "credit cards")
 
 As to the Debit Cards, normally underneath it's based on ACH payment system.
 
