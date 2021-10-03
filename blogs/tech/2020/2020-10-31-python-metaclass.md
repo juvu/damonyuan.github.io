@@ -44,3 +44,7 @@ class Foo(object, metaclass=something, kwarg1=value1, kwarg2=value2):
 ## Others 
 
 https://cloud.tencent.com/developer/article/1546310
+
+## Reference
+
+- ![The Quick Python Book](https://drek4537l1klr.cloudfront.net/ceder2/Figures/cover.jpg "https://livebook.manning.com/book/the-quick-python-book-third-edition/about-this-book/")
