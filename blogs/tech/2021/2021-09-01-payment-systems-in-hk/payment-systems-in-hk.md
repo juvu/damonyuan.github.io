@@ -64,6 +64,43 @@ There are a lot eWallet provider in HK now,
 
 All of them will need to manage a ledger internally. Normally the implementation of them will based on other payment systems, eg., the FPS, ACH, etc.
 
+Compared with the payment system of e-commerce system, which includes 
+
+- Order Placement
+- Checkout 
+- Transaction
+  - From
+  - To
+  - Amount
+  - Currency
+  - Product
+  - Quantity
+- Ledger 
+  - Credit Entry
+  - Debit Entry
+
+the eWallet's transactions only contain
+
+- From
+- To
+- Amount
+- Currency
+
+And if foreign exchange is involved, an exchange wallet will be involved, for example, 
+
+| From  | To | From Amount | From Curency | To Amount | To Curency | EXCHANGE |
+|-------|----|--------|---------|---------|-------|----|
+| A     | B |  100   |  HKD    |  83 | RMB |  HSBC |
+
+ledger entries
+
+| Type | Account | Amount | Currency |
+|------|---------|--------|----------|
+| Debit| A       |  100   | HKD      |
+| Credit | HSBC  |  100   | HKD      |
+| Debit  | HSBC  | 83     | RMB      |
+| Credit | B     | 83     | RMB      | 
+
 ### FPS
 
 Another Real Time payment system initiated by HKICL which included both push-based and pull-based payment methods.
