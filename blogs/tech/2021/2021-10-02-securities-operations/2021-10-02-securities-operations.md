@@ -13,4 +13,4 @@ tags: [Securities, Trading, STO]
 
 The flowchart is to deepen my understanding of the content in this book.
 
-![GCP](securities-operations.svg "Securities Operations Flowchart")
+![Securities Operations Flowchart](securities-operations.svg "Securities Operations Flowchart")

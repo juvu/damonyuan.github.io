@@ -688,5 +688,5 @@ The Law of Demeter (LoD) or principle of least knowledge is a design guideline f
 
 ## Reference
 
-![大话设计模式](https://img9.doubanio.com/view/subject/l/public/s6908318.jpg "https://item.jd.com/10079261.html")
+![大话设计模式](https://images-cn.ssl-images-amazon.cn/images/I/51xb+7p9wTL._SX258_BO1,204,203,200_.jpg "https://item.jd.com/10079261.html")
 

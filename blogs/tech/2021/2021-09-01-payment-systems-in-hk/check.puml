@@ -1,0 +1,14 @@
+@startuml
+debor -> creditor: write a check as the authorization
+creditor -> "creditor's bank": send the check to the clerk of bank
+"creditor's bank" --> creditor: OK
+"creditor's bank" -> "debtor's bank": collect the money
+"debtor's bank" --> "creditor's bank": send the money
+note bottom
+Note that previously the process is achieved through Clearing House,
+where all the representatives from different banks sit together to 
+net settle all the checks. Nowadays it's commonly achieved through ACH.
+end note
+"creditor's bank" --> creditor: credit the fund to the creditor's account
+
+@enduml
