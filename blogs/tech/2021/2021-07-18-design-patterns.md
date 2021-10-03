@@ -686,3 +686,7 @@ Interface-oriented programming.
 
 The Law of Demeter (LoD) or principle of least knowledge is a design guideline for developing software, particularly object-oriented programs.
 
+## Reference
+
+![大话设计模式](https://img9.doubanio.com/view/subject/l/public/s6908318.jpg "https://item.jd.com/10079261.html")
+

@@ -36,3 +36,7 @@ In Android there is a famous problem which Google has spent decades to try to fi
 ### Tech Stack
 
 ### Client Side Resilience
+
+## Reference
+
+![Microservice in Action](https://images-na.ssl-images-amazon.com/images/I/419uVb8pv0L._SX396_BO1,204,203,200_.jpg "https://www.amazon.com/Microservices-Action-Morgan-Bruce/dp/1617294454")

@@ -4,7 +4,7 @@ description: "Securities Operations"
 date: 2021-10-02 15:04:23
 hidden: false
 categories: [Tech]
-tags: [GCP]
+tags: [Securities, Trading, STO]
 ---
 
 # Securities Operations
