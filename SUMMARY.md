@@ -4,6 +4,7 @@
 * Blogs
   * 2021
     * [Securities Operations](blogs/tech/2021/2021-10-02-securities-operations/2021-10-02-securities-operations.md)
+    * [Payment Systems in Hong Kong](blogs/tech/2021/2021-09-01-payment-systems-in-hk/payment-systems-in-hk.md)
     * [Statistical Significance](blogs/tech/2021/2021-08-10-statistical-significance/2021-08-10-statistical-significance.md)
     * [Microservice Caveat](blogs/tech/2021/2021-08-10-microservice-caveat.md)
     * [Design Patterns](blogs/tech/2021/2021-07-18-design-patterns.md)
