@@ -1,0 +1,175 @@
+@startuml
+
+Actor Client
+
+box Front Office
+Actor Sales
+Actor Trader
+participant "Trading System"
+end box
+box Middle Office
+participant "Trade Capture"
+participant "Static Data"
+end box
+box Back Office
+participant "Settlement System"
+participant "Trade Reporting"
+end box
+participant "STO B"
+participant "HKSFC"
+participant CCASS
+participant HKICL
+participant Custodians
+
+Client -> Sales: Order Placement
+activate Sales
+Sales -> Sales: Record the Order
+note right
+10:00 AM HKT 2020/10/05
+---
+Stock: AAA
+Price: $1000
+Quantity: 10000
+Operation: Buy; Limit; Fill
+Trade Date: 2020/10/06
+Value Date: 2020/10/08
+Others: 4000 to A account and
+           6000 to B account
+end note
+
+Sales -> Trader: Forwarding
+deactivate Sales
+activate Trader
+Trader -> Trader: Order Accessment
+Trader --> Sales: Response: OK
+deactivate Trader
+activate Sales
+Sales --> Client: OK
+deactivate Sales
+
+activate Trader
+Trader -> Trader
+Trader -> "Trading System": Trade Execution and Capture
+activate "Trading System"
+"Trading System" -> "STO B": Trade Execution
+activate "STO B"
+"STO B" --> "Trading System"
+note right
+It could be Exchanges, other STOs or
+Institute Investors.
+end note
+deactivate "STO B"
+"Trading System" -> "Trading System": Trade Capture
+note right
+10:00 AM HKT 2020/10/06
+---
+Stock: AAA
+Quantity: 10000
+Operation: Buy; Limit; Fill
+Trade Date: 2020/10/06
+Value Date: 2020/10/08
+....
+Price: $998
+Trade Time: 3:00 PM HKT
+Counterparty: STO B
+end note
+"Trading System" --> Trader: OK
+deactivate Trader
+"Trading System" -> "Trade Capture"
+deactivate "Trading System"
+
+activate "Trade Capture"
+"Trade Capture" -> "Trade Capture": Trade Capture
+note right
+10:00 AM HKT 2020/10/06
+---
+Stock: AAA
+Quantity: 10000
+Operation: Buy; Limit; Fill
+Trade Date: 2020/10/06
+Value Date: 2020/10/08
+....
+Price: $998
+Trade Time: 3:00 PM HKT
+Counterparty: STO B
+....
+Position A: +4000 AAA
+Position B: +6000 AAA
+Trading Book: Book XXX
+end note
+"Trade Capture" -> "Static Data": Trade Enrichment
+note right
+10:00 AM HKT 2020/10/06
+---
+Stock: AAA
+Quantity: 10000
+Operation: Buy; Limit; Fill
+Trade Date: 2020/10/06
+Value Date: 2020/10/08
+....
+Price: $998
+Trade Time: 3:00 PM HKT
+Counterparty: STO B
+....
+Position A: +4000 AAA
+Position B: +6000 AAA
+Trading Book: Book XXX
+....
+Cash Value: 10000 * 998 * (1 + 0.1%)
+Securities Settlement: CCASS
+Money Settlement: HKICL
+end note
+activate "Static Data"
+"Static Data" --> "Trade Capture"
+deactivate "Static Data"
+"Trade Capture" -> "Trade Capture": Trade Validation
+deactivate "Trade Capture"
+
+"Settlement System" -> "Trade Capture": Get the Trades
+activate "Settlement System"
+activate "Trade Capture"
+"Trade Capture" --> "Settlement System"
+deactivate "Trade Capture"
+"Settlement System" -> "STO B": Trade Confirmation
+activate "STO B"
+"STO B" --> "Settlement System": Trade Matching
+deactivate "STO B"
+deactivate "Settlement System"
+
+"Trade Reporting" -> "Trade Capture": Get the Trades
+activate "Trade Reporting"
+activate "Trade Capture"
+"Trade Capture" --> "Trade Reporting"
+deactivate "Trade Capture"
+"Trade Reporting" -> "HKSFC": Trade Reporting
+activate HKSFC
+HKSFC --> "Trade Reporting"
+deactivate HKSFC
+deactivate "Trade Reporting"
+
+"Settlement System" -> CCASS: Securities Settlement Instruction
+activate CCASS
+CCASS -> Custodians
+activate Custodians
+Custodians --> CCASS
+deactivate Custodians
+CCASS --> "Settlement System"
+deactivate CCASS
+"Settlement System" -> HKICL: Money Settlement Instruction
+activate HKICL
+HKICL -> Custodians
+activate Custodians
+Custodians --> HKICL
+deactivate Custodians
+HKICL --> "Settlement System"
+deactivate HKICL
+note bottom
+The settlement instruction can also
+be forwarded the custodians from the STOs respectively if the two
+counterparties execute the trade directly 
+without the involvement of HKEX.
+end note
+
+
+@enduml
+
