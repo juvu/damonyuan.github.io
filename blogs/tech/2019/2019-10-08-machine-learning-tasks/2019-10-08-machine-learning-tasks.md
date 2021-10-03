@@ -15,3 +15,7 @@ tags: [One-Image-Per-Day]
 **One Image Per Day**
 
 ![machine-learning-tasks](ml_tasks.png "Machine Learning Tasks")
+
+## Reference
+
+- ![Machine Learning in Action](https://images.manning.com/360/480/resize/book/c/4d7bb26-5e33-4b6a-b71b-2fa35958c0d9/pharrington.png "Machine Learning in Action")
