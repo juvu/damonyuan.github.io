@@ -92,7 +92,7 @@ And if foreign exchange is involved, an exchange wallet will be involved, for ex
 |-------|----|--------|---------|---------|-------|----|
 | A     | B |  100   |  HKD    |  83 | RMB |  HSBC |
 
-ledger entries
+and then the transaction record will be split into ledger entries,
 
 | Type | Account | Amount | Currency |
 |------|---------|--------|----------|
@@ -100,6 +100,10 @@ ledger entries
 | Credit | HSBC  |  100   | HKD      |
 | Debit  | HSBC  | 83     | RMB      |
 | Credit | B     | 83     | RMB      | 
+
+Now the if there is 1000 HKD in A's account previously, now it will be 900; and if there is 0 RMB in B's account, now it will be 83.
+
+And normally there will be a temporary transaction table to record the daily transations, by the EOD, the eWallet will reconcile with the counterparty (normally the banks), and move those matching transactions into history table. 
 
 ### FPS
 
