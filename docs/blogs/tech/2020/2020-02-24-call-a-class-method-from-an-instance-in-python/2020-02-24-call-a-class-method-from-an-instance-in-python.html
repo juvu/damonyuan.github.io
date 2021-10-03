@@ -1,0 +1,1073 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Call a Class Method from an Instance in Python · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Call a Class Method from an Instance in Python">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.html" />
+    
+    
+    <link rel="prev" href="../2020-07-21-shards-replicas-and-nodes.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Blogs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    2021
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../2021/2021-10-02-securities-operations/2021-10-02-securities-operations.html">
+            
+                <a href="../../2021/2021-10-02-securities-operations/2021-10-02-securities-operations.html">
+            
+                    
+                    Statistical Significance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../2021/2021-08-10-statistical-significance/2021-08-10-statistical-significance.html">
+            
+                <a href="../../2021/2021-08-10-statistical-significance/2021-08-10-statistical-significance.html">
+            
+                    
+                    Statistical Significance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../2021/2021-08-10-microservice-caveat.html">
+            
+                <a href="../../2021/2021-08-10-microservice-caveat.html">
+            
+                    
+                    Microservice Caveat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../2021/2021-07-18-design-patterns.html">
+            
+                <a href="../../2021/2021-07-18-design-patterns.html">
+            
+                    
+                    Design Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../2021/2021-01-08-gcp-products/2021-01-08-gcp-products.html">
+            
+                <a href="../../2021/2021-01-08-gcp-products/2021-01-08-gcp-products.html">
+            
+                    
+                    GCP Products
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    2020
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../2020-10-31-python-metaclass.html">
+            
+                <a href="../2020-10-31-python-metaclass.html">
+            
+                    
+                    Python Metaclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../2020-10-07-tools-for-reliability.html">
+            
+                <a href="../2020-10-07-tools-for-reliability.html">
+            
+                    
+                    Tools for Reliability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../2020-09-10-MVCC/2020-09-10-MVCC.html">
+            
+                <a href="../2020-09-10-MVCC/2020-09-10-MVCC.html">
+            
+                    
+                    MVCC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../2020-07-21-shards-replicas-and-nodes.html">
+            
+                <a href="../2020-07-21-shards-replicas-and-nodes.html">
+            
+                    
+                    Shards, Replicas and Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.5" data-path="2020-02-24-call-a-class-method-from-an-instance-in-python.html">
+            
+                <a href="2020-02-24-call-a-class-method-from-an-instance-in-python.html">
+            
+                    
+                    Call a Class Method from an Instance in Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.html">
+            
+                <a href="../2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.html">
+            
+                    
+                    MVVM vs Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../2020-02-12-netflix-vs-k8s+istio/2020-02-12-netflix-vs-k8s+istio.html">
+            
+                <a href="../2020-02-12-netflix-vs-k8s+istio/2020-02-12-netflix-vs-k8s+istio.html">
+            
+                    
+                    Two Microservice Tech Stacks: Netflix vs K8S + Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../2020-02-10-k8s-ss-kcp.html">
+            
+                <a href="../2020-02-10-k8s-ss-kcp.html">
+            
+                    
+                    A Kubernetes solution for ShadowSocks + kcptun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="../2020-01-31-wuhan-coronavirus-timeline-api/2020-01-31-wuhan-coronavirus-timeline-api.html">
+            
+                <a href="../2020-01-31-wuhan-coronavirus-timeline-api/2020-01-31-wuhan-coronavirus-timeline-api.html">
+            
+                    
+                    A Test App with Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    2019
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../2019/2019-11-30-Java-from-code-to-run/2019-11-30-Java-from-code-to-run.html">
+            
+                <a href="../../2019/2019-11-30-Java-from-code-to-run/2019-11-30-Java-from-code-to-run.html">
+            
+                    
+                    Java - from code to run
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../2019/2019-10-27-android-booting-process/2019-10-27-android-booting-process.html">
+            
+                <a href="../../2019/2019-10-27-android-booting-process/2019-10-27-android-booting-process.html">
+            
+                    
+                    Android Linux Booting Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../2019/2019-10-24-resolve-single-number-problems/2019-10-24-resolve-single-number-problems.html">
+            
+                <a href="../../2019/2019-10-24-resolve-single-number-problems/2019-10-24-resolve-single-number-problems.html">
+            
+                    
+                    Resolve Single Number Problems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../2019/2019-10-24-resolve-recursion-problems/2019-10-24-resolve-recursion-problems.html">
+            
+                <a href="../../2019/2019-10-24-resolve-recursion-problems/2019-10-24-resolve-recursion-problems.html">
+            
+                    
+                    Resolve Recursion Problems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../../2019/2019-10-18-the-things-to-consider-as-an-architect/2019-10-18-the-things-to-consider-as-an-architect.html">
+            
+                <a href="../../2019/2019-10-18-the-things-to-consider-as-an-architect/2019-10-18-the-things-to-consider-as-an-architect.html">
+            
+                    
+                    The Things to Consider as An Architect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../../2019/2019-10-14-a-simple-explanation-of-information-gain/2019-10-14-a-simple-explanation-of-information-gain.html">
+            
+                <a href="../../2019/2019-10-14-a-simple-explanation-of-information-gain/2019-10-14-a-simple-explanation-of-information-gain.html">
+            
+                    
+                    A Simple Explanation of Information Gain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../../2019/2019-10-10-developing-a-machine-learning-application/2019-10-10-developing-a-machine-learning-application.html">
+            
+                <a href="../../2019/2019-10-10-developing-a-machine-learning-application/2019-10-10-developing-a-machine-learning-application.html">
+            
+                    
+                    Developing a Machine Learning Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../../2019/2019-10-08-machine-learning-tasks/2019-10-08-machine-learning-tasks.html">
+            
+                <a href="../../2019/2019-10-08-machine-learning-tasks/2019-10-08-machine-learning-tasks.html">
+            
+                    
+                    Machine Learning Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.9" data-path="../../2019/2019-10-01-The-difference-between-127.0.0.1-and-0.0.0.0.html">
+            
+                <a href="../../2019/2019-10-01-The-difference-between-127.0.0.1-and-0.0.0.0.html">
+            
+                    
+                    The difference between 127.0.0.1 and 0.0.0.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.10" data-path="../../2019/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning.html">
+            
+                <a href="../../2019/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning/2019-04-15-relationship-between-ai-machine-learning-and-deep-learning.html">
+            
+                    
+                    Relationship between AI, Machine Learning and Deep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.11" data-path="../../2019/2019-04-09-new-script.html">
+            
+                <a href="../../2019/2019-04-09-new-script.html">
+            
+                    
+                    Shell Script Generator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.12" data-path="../../2019/2019-04-09-mac-vpn-script.html">
+            
+                <a href="../../2019/2019-04-09-mac-vpn-script.html">
+            
+                    
+                    Mac VPN script
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    2018
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../2018/2018-05-07-deploy-ShadowSocks-Manager-in-one-minute.html">
+            
+                <a href="../../2018/2018-05-07-deploy-ShadowSocks-Manager-in-one-minute.html">
+            
+                    
+                    相信科学 - 一分钟部署 ShadowSocks-Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../2018/2018-04-15-GIL-in-ruby.html">
+            
+                <a href="../../2018/2018-04-15-GIL-in-ruby.html">
+            
+                    
+                    Digest: GIL in Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../2018/2018-04-15-An-introduction-to-functional-programming-abstract.html">
+            
+                <a href="../../2018/2018-04-15-An-introduction-to-functional-programming-abstract.html">
+            
+                    
+                    Digest: An introduction to functional programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    2017
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../2017/2017-11-27-Start-ShadowSocks-in-One-Minute.html">
+            
+                <a href="../../2017/2017-11-27-Start-ShadowSocks-in-One-Minute.html">
+            
+                    
+                    Start ShadowSocks in One Minute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../2017/2017-09-14-Javascript-vs-Ruby-Inheritance/2017-09-14-Javascript-vs-Ruby-Inheritance.html">
+            
+                <a href="../../2017/2017-09-14-Javascript-vs-Ruby-Inheritance/2017-09-14-Javascript-vs-Ruby-Inheritance.html">
+            
+                    
+                    JavaScript vs Ruby in Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../2017/2017-07-02-Docker-inside-GFW/2017-07-02-Docker-inside-GFW.html">
+            
+                <a href="../../2017/2017-07-02-Docker-inside-GFW/2017-07-02-Docker-inside-GFW.html">
+            
+                    
+                    Docker inside GFW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../2017/2017-07-01-Test-with-iOS.html">
+            
+                <a href="../../2017/2017-07-01-Test-with-iOS.html">
+            
+                    
+                    Test with iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../series/">
+            
+                <a href="../../../../series/">
+            
+                    
+                    Series
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../../series/quantitative-trading-with-backtrader/">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/">
+            
+                    
+                    Quantitative Trading with Backtrader
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../../series/quantitative-trading-with-backtrader/2020-09-09-backtrader-architecture/2020-09-09-backtrader-architecture.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-09-09-backtrader-architecture/2020-09-09-backtrader-architecture.html">
+            
+                    
+                    Backtrader Architecut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../../series/quantitative-trading-with-backtrader/2020-09-27-qt-htbyoatb-1/2020-09-27-qt-htbyoatb-1.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-09-27-qt-htbyoatb-1/2020-09-27-qt-htbyoatb-1.html">
+            
+                    
+                    Chapter 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../../series/quantitative-trading-with-backtrader/2020-09-28-qt-htbyoatb-2/2020-09-28-qt-htbyoatb-2.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-09-28-qt-htbyoatb-2/2020-09-28-qt-htbyoatb-2.html">
+            
+                    
+                    Chapter 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../../../series/quantitative-trading-with-backtrader/2020-09-29-qt-htbyoatb-3.1/2020-09-29-qt-htbyoatb-3.1.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-09-29-qt-htbyoatb-3.1/2020-09-29-qt-htbyoatb-3.1.html">
+            
+                    
+                    Chapter 3 (上)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../../../../series/quantitative-trading-with-backtrader/2020-09-29-qt-htbyoatb-3.2/2020-09-29-qt-htbyoatb-3.2.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-09-29-qt-htbyoatb-3.2/2020-09-29-qt-htbyoatb-3.2.html">
+            
+                    
+                    Chapter 3 (下)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../../../../series/quantitative-trading-with-backtrader/2020-10-01-qt-htbyoatb-4/2020-10-01-qt-htbyoatb-4.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-10-01-qt-htbyoatb-4/2020-10-01-qt-htbyoatb-4.html">
+            
+                    
+                    Chapter 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="../../../../series/quantitative-trading-with-backtrader/2020-10-01-qt-htbyoatb-5/2020-10-01-qt-htbyoatb-5.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-10-01-qt-htbyoatb-5/2020-10-01-qt-htbyoatb-5.html">
+            
+                    
+                    Chapter 5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="../../../../series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.1/2020-10-20-qt-htbyoatb-6.1.html">
+            
+                    
+                    Chapter 6 (上)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.9" data-path="../../../../series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.2/2020-10-20-qt-htbyoatb-6.2.html">
+            
+                <a href="../../../../series/quantitative-trading-with-backtrader/2020-10-20-qt-htbyoatb-6.2/2020-10-20-qt-htbyoatb-6.2.html">
+            
+                    
+                    Chapter 6 (下)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >Call a Class Method from an Instance in Python</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="call-a-class-method-from-an-instance-in-python">Call a Class Method from an Instance in Python</h1>
+<blockquote>
+<ul>
+<li>Author: <a href="https://www.damonyuan.com" target="_blank">Damon Yuan</a></li>
+<li>Date: 2020-02-24</li>
+</ul>
+</blockquote>
+<p>I&apos;m brushing up my Python skills recently and trying to figure out the inheritance chain in Python. However to my surprise, I accidently found that the class method can be invoked from a instance,</p>
+<pre><code>#!/usr/bin/env python
+
+class Parent:
+    @classmethod
+    def kls_whoami(cls):
+        print(&apos;class&apos;)
+    def whoami(self):
+        print(&apos;instance&apos;)     
+
+class Child(Parent):
+    def __init__(self):
+        print(&apos;init&apos;)
+
+
+c = Child()
+c.whoami() # instance
+Child.kls_whoami() # class
+c.kls_whoami() # class -&gt; ? why
+</code></pre><p>I was shocked because it never happens in JavaScript, Ruby or other languages that I know, and it seems to have broken the principle of encapsulation - how come a class method can be called from an object, why is it so special and and what&apos;s the differences between Python and other languages&apos; inheritance models?</p>
+<p>As the questions haunting around my mind, I decided to dig into it.</p>
+<h2 id="why-ruby-and-javascript-do-not-have-this-problem">Why Ruby and JavaScript do not have this problem</h2>
+<p>One of the efficient study pattern is learning through comparison. I picked Ruby and JavaScript for this purpose in this case.</p>
+<h3 id="ruby">Ruby</h3>
+<p>First of all let&apos;s check the Ruby&apos;s inheritance model. </p>
+<p>My test is based on </p>
+<p>Tested in <code>irb</code>,</p>
+<pre><code>#!/usr/bin/ruby -w
+class Parent
+  def self.kls_whoami
+    puts &apos;class&apos;
+  end
+
+  def whoami
+    puts &apos;instance&apos;
+  end
+end
+
+class Child &lt; Parent
+end
+
+c = Child.new
+d = Child.new
+c.whoami # instance
+Child.kls_whoami # class
+c.kls_whoami # undefined method
+</code></pre><p>and the inheritance model is</p>
+<p><img src="ruby_inheritance_model.png" alt="Ruby Inheritance Model" title="Ruby Inheritance Model">  </p>
+<p>When <code>c.whoami</code> is invoked, the search chain is </p>
+<ol>
+<li>check if object <code>c</code>&apos;s singleton_class <code>#c</code> has the <code>whoami</code> method </li>
+<li>if it&apos;s not there, it goes up to the ancestor chain - <code>Child</code> class</li>
+<li>if not found in <code>Child</code>, it would check the <code>Parent</code> class. Here we find the instance method <code>whoami</code></li>
+<li><code>NoMethodError</code> would be throw if there&apos;re no method with this signature found</li>
+</ol>
+<p>When <code>Child.kls_whoami</code> is invoked, the search chain is    </p>
+<ol>
+<li>check if the <code>Child</code> class&apos;s singleton_class <code>#Child</code> contains the <code>kls_whoami</code></li>
+<li>if not, climb up to its superclass, <code>#Parent</code>. Here we find the class method <code>kls_whoami</code></li>
+</ol>
+<p>Through the analysis we know the instance methods and class methods live in different namespaces - the singleton_class of the object / the class and the singleton class of the class. And isolation ensures no static methods will be touch when called on an instance of that class.</p>
+<h3 id="javascript">JavaScript</h3>
+<p>We will do the similar analysis on JavaScript, which is famous for the prototype pattern in inheritance model,</p>
+<pre><code>#!/usr/bin/env node
+class Parent {
+    static klsWhoami() {
+        console.log(&apos;class&apos;)
+    }    
+
+    whoami() { 
+        console.log(&apos;instance&apos;)
+    }    
+}
+
+class Child extends Parent {
+}
+
+let c = new Child();
+c.whoami(); # instance
+Child.klsWhoami(); # class
+c.klsWhoami(); # TypeError: c.klsWhoami is not a function
+</code></pre><p>and the inheritance model is</p>
+<p><img src="js_inheritance_model.png" alt="JavaScript Inheritance Model" title="JavaScript Inheritance Model">  </p>
+<p>When <code>c.whoami()</code> is invoked, the search chain is </p>
+<ol>
+<li>check if <code>Child.prototype</code> contains the instance method</li>
+<li>if not, climb up to the <code>Parent.prototype</code>. Here we find the <code>whoami()</code> instance method</li>
+</ol>
+<p>When <code>Child.klsWhoami()</code> is invoked, the search chain is      </p>
+<ol>
+<li>check if <code>Child</code> function / constructor contains the class method</li>
+<li>if not, check its ancestor <code>Parent</code> to see if it&apos;s there. Here we find the <code>klsWhoami</code> class method</li>
+</ol>
+<p>Similarly we know now in JavaScript, instance methods and class methods exist in different namespace, so that when call the <code>klsWhoami()</code> method on <code>c</code> object, <code>TypeError: c.klsWhoami is not a function</code> will be throw.</p>
+<h2 id="how-is-pythons-inheritance-model">How is Python&apos;s inheritance model</h2>
+<p>In Python, Class and instance methods live in the same namespace, it also enforces that the signature of instance methods and class/static methods cannot be the same.</p>
+<p>The magic that transforms your obj.method(<em>args) call into method(obj, </em>args) is inside a .<strong>get</strong>() implementation of the function object that is, in fact, a non-data descriptor.</p>
+<p>This works for regular instance methods just like it does for class methods or static methods. So, if you call a static method with obj.method(<em>args), then it&#x2019;s automatically transformed into method(</em>args). Similarly, if you call a class method with obj.method(type(obj), <em>args), then it&#x2019;s automatically transformed into method(type(obj), </em>args).</p>
+<p>Reference: (<a href="https://realpython.com/python-descriptors/" target="_blank">Python Descriptors: An Introduction</a>)</p>
+<p><img src="python_inheritance_model.png" alt="Python Inheritance Model" title="Python Inheritance Model"></p>
+<p>Much simpler, right?</p>
+<p>When <code>c.whoami()</code> is invoked, the search chain will</p>
+<ol>
+<li>check if the instance&apos;s namespace contains the method. Here we find the bound method and using the descriptor to access the method, the descriptor will help to call the method using <code>Parent.whoami(c)</code></li>
+<li>Otherwise, check if the type of the instance and see if the type&apos;s namespace contains the method</li>
+<li>if still not found, escalate through the chain until it reach the end</li>
+</ol>
+<p>When <code>c.kls_whoami()</code> is called, the search chain will</p>
+<ol>
+<li>check if the instance&apos;s namespace contains the method. Here we find the bound method and using the descriptor to access the method, the descriptor will help to call the method using <code>Parent.kls_whoami(type(c))</code></li>
+<li>Otherwise, check if the type of the instance and see if the type&apos;s namespace contains the method</li>
+<li>if still not found, escalate through the chain until it reach the end</li>
+</ol>
+<p><code>Child.kls_whoami()</code> and <code>Parent.kls_whoami()</code> is similar except that they are starting from the namespace of <code>Child</code> class and <code>Parent</code> class respectively.</p>
+<p>Both the class method and the instance method live in the <code>Parant</code> class&apos;s namespace, and the built-in non-data descriptor will help the instance to find the bound methods and convert the instance called upon to the arguments required by the method. For these reasons, a class method can be called on a python object instance without throwing any exceptions.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../2020-07-21-shards-replicas-and-nodes.html" class="navigation navigation-prev " aria-label="Previous page: Shards, Replicas and Nodes">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.html" class="navigation navigation-next " aria-label="Next page: MVVM vs Redux">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Call a Class Method from an Instance in Python","description":"Call a Class Method from an Instance in Python","date":"2020-02-24T15:04:23.000Z","hidden":false,"categories":["Tech"],"tags":["Python","Inheritance"],"level":"1.2.2.5","depth":3,"next":{"title":"MVVM vs Redux","level":"1.2.2.6","depth":3,"path":"blogs/tech/2020/2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.md","ref":"blogs/tech/2020/2020-02-18-mvvm-vs-redux/2020-02-18-mvvm-vs-redux.md","articles":[]},"previous":{"title":"Shards, Replicas and Nodes","level":"1.2.2.4","depth":3,"path":"blogs/tech/2020/2020-07-21-shards-replicas-and-nodes.md","ref":"blogs/tech/2020/2020-07-21-shards-replicas-and-nodes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["intopic-toc","collapsible-chapters","katex","ga"],"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-92600235-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"blogs/tech/2020/2020-02-24-call-a-class-method-from-an-instance-in-python/2020-02-24-call-a-class-method-from-an-instance-in-python.md","mtime":"2021-07-12T07:38:55.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-03T10:03:03.778Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,157 @@
+Collection
+====
+
+My collection of blogs. 
+
+- collection
+  - dbs
+    - mongo
+      - [Optimizing MongoDB Compound Indexes](https://emptysqua.re/blog/optimizing-mongodb-compound-indexes/)
+      - LSTM
+        - [数据库从0到0.1 (一)： LSM-Tree VS B-Tree](https://blog.bcmeng.com/post/lsm-tree-vs-b-tree.html)
+        - [人人都能看懂的LSTM](https://mp.weixin.qq.com/s/5sfKvTvafk1Y5Fv2eg8oPw)    
+    - neo4j
+      - [基于Neo4j和Tushare数据构建小型金融知识图谱](https://mp.weixin.qq.com/s/VUEOxHq1Tizxye15Rg9odg)
+    - prometheus
+      - [Writing a Time Series Database from Scratch](https://fabxc.org/tsdb/)
+    - RDMS
+      - MySql
+        - [MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
+        - [五分钟搞清楚MySQL事务隔离级别](https://www.jianshu.com/p/4e3edbedb9a8)
+        - [数据库两大神器【索引和锁】](https://zhuanlan.zhihu.com/p/40396971)
+        - [提高性能的数据库纵向分割和横向分割](https://blog.csdn.net/zhailihua/article/details/79376926)
+      - generic
+        - [一文搞懂面试中常考的数据库「锁」问题](https://mp.weixin.qq.com/s/M4TLIxM9uBu7WS5TuW77GQ)
+        - [为什么数据库字段要使用NOT NULL？](https://mp.weixin.qq.com/s/sDvEZjDmF5ZHJSBY4gYCfw)
+        - [数据库调优](https://mp.weixin.qq.com/s/-994pHXIIkwF5OVnGwbwRA)  
+
+  - languages
+    - c
+      - build tools
+        - [重新发现 make： 规则背后的力量](https://mp.weixin.qq.com/s/QJDo0G4ZYiRnvZjOI6AqkQ)
+      - c
+        - [Linux Socket编程（不限Linux）](https://www.cnblogs.com/skynet/archive/2010/12/12/1903949.html)
+      - cpp  
+    
+    - java
+      - high concurrency
+        - [使用wait和notify](https://www.liaoxuefeng.com/wiki/1252599548343744/1306580911915042)
+      - jvm  
+        - [Java类加载及对象创建过程详解](https://mp.weixin.qq.com/s/s1nXLbyjwOx6iehd_g26rA)        
+        - [Java堆外内存排查小结](https://mp.weixin.qq.com/s/p0cQeDLm3A-C0gGQ3aBp1Q)    
+        - [一图解千愁，jvm内存从来没有这么简单过！](https://mp.weixin.qq.com/s/mB1TwKVULY7gSqXTW9NEoA)
+      - NIO
+        - [java.nio - How to build a simple non-blocking server in Java?](https://www.devdiaries.net/blog/java.nio-How-To-Build-a-non-blocking-server-in-java/)
+        - [NIO效率高的原理之零拷贝与直接内存映射](https://mp.weixin.qq.com/s/A8vc7exPDko1k1WaXuO0Og)
+        - [彻底搞懂NIO效率高的原理](https://mp.weixin.qq.com/s/wVoHfhh28Vh5sgKQbPXk8w)
+      - Hibernate
+        - [How does Hibernate store second-level cache entries](https://vladmihalcea.com/how-does-hibernate-store-second-level-cache-entries/)
+        - [A beginner’s guide to Cache synchronization strategies](https://vladmihalcea.com/a-beginners-guide-to-cache-synchronization-strategies/)    
+      - Architecture  
+        - [贫血，充血模型的解释以及一些经验](https://www.oschina.net/question/54100_10400)    
+      - others
+        - [How to create Immutable class in Java?](https://www.geeksforgeeks.org/create-immutable-class-java/)  
+    
+    - javascript
+      - stream
+        - [Creating duplex streams with Node.js](http://codewinds.com/blog/2013-08-31-nodejs-duplex-streams.html)
+      - non-blocking
+        - [On problems with threads in node.js](https://kariera.future-processing.pl/blog/on-problems-with-threads-in-node-js/)
+        - [Understanding setTimeout()](https://levelup.gitconnected.com/understanding-settimeout-15c7de9e5fd6)
+      - http proxies  
+        - [HTTP 代理原理及实现（一）](https://imququ.com/post/web-proxy.html) 
+        - [HTTP 代理原理及实现（二）](https://imququ.com/post/web-proxy-2.html)
+        - [Using nodejs to implement Socks5 protocol](https://developpaper.com/using-nodejs-to-implement-socks5-protocol/)
+      - others
+        - [keepalive settings in Node.js and reverse proxy](https://github.com/nodejs/node/issues/27363)  
+          
+  - linux
+    - cpu
+      - [CPU 空闲时在干嘛？](https://mp.weixin.qq.com/s/FajNjSaxeaYZClunmtRDMg)
+    - io
+      - file and socket
+        - [黑科技解密！实现socket进程间迁移！](https://blog.csdn.net/lycyingO/article/details/118560802)        
+        - [LINUX – IO MULTIPLEXING – SELECT VS POLL VS EPOLL](https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll)
+        - [Linux进程间通信方式之socket使用实例](https://cloud.tencent.com/developer/article/1722546)  
+        - [介绍 Linux 中的管道和命名管道](https://mp.weixin.qq.com/s/7IEycKf31GvOLSBqbpXFLA)
+      - file system
+        - [好家伙，你管这破玩意叫文件系统？](https://mp.weixin.qq.com/s/2Sv1S0Ti2Mb1d6yCXvm5FQ)
+        - [深入理解 ext4 等 Linux 文件系统](https://mp.weixin.qq.com/s/sTjsHobMuqn7mQrcL2xeCg)    
+    - memory
+      - [Linux内存、Swap、Cache、Buffer详细解析](https://mp.weixin.qq.com/s/lIpFpELm_SbO-Km3Ziolyg)
+      - [为什么 Linux 需要虚拟内存](https://draveness.me/whys-the-design-os-virtual-memory/)    
+    - network
+      - generic
+        - [图解 HTTP 缓存](https://mp.weixin.qq.com/s/2u-IjItCLHgXj3ylHuI9zA)
+        - [图解：原来这就是网络](https://mp.weixin.qq.com/s/LdiBrtATAIjNXCxYchH63w)
+        - [搞懂这 9 个步骤，DNS 访问原理就明明白白了](https://mp.weixin.qq.com/s/jXgr9_06E_tT-e1M_2hqcg)
+        - [互联网协议入门（一）](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)    
+        - [互联网协议入门（二）](https://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
+      - iptable
+        - [nf_conntrack: table full, dropping packet](https://morganwu277.github.io/2018/05/26/Solve-production-issue-of-nf-conntrack-table-full-dropping-packet/)  
+      - tcp
+        - [一篇文章带你详解 HTTP 协议（网络协议篇一）](https://www.jianshu.com/p/6e9e4156ece3)
+        - [一篇文章带你熟悉 TCP/IP 协议（网络协议篇二）](https://juejin.cn/post/6844903510509633550)  
+        - [一台Linux服务器最多能支撑多少个TCP连接？](https://cloud.tencent.com/developer/article/1768585)
+        - [肝了三天，万字长文教你玩转 tcpdump，从此抓包不用愁](https://mp.weixin.qq.com/s/2v_dtZitNKQHa72VXlkp-Q)
+        - [TCP 半连接队列和全连接队列满了会发生什么？又该如何应对？](https://mp.weixin.qq.com/s/aQ7v_TQVI6AS--MHPy7fjw)    
+      - http
+        - [几幅图，拿下 HTTPS](https://mp.weixin.qq.com/s/U9SRLE7jZTB6lUZ6c8gTKg)  
+        - [Google、Facebook等均开始支持的HTTP3到底是个什么鬼？](https://mp.weixin.qq.com/s/ihuR6gIxUUWF8oobiJ8B_A)
+        - [HTTP/2做错了什么？刚刚辉煌2年就要被弃用了！？](https://mp.weixin.qq.com/s/BooVJk9w5rPWjqvC0--vsA)
+        - [HTTP Keep-Alive模式](https://www.cnblogs.com/skynet/archive/2010/12/11/1903347.html)    
+      - cyber security
+        - [跨域(Access-Control-Allow-Origin)解决方案详解](https://blog.csdn.net/jiabeis/article/details/103459765)
+        - [A Deep Dive into CSRF Protection in Rails](https://medium.com/rubyinside/a-deep-dive-into-csrf-protection-in-rails-19fa0a42c0ef)  
+    - security
+      - [如何在 Linux 中配置 sudo 访问权限](https://mp.weixin.qq.com/s/sgBlJQAwJWG-b5T1hyycfA)    
+    - process
+      - [线上服务 CPU 100%？一键定位 so easy！](https://mp.weixin.qq.com/s/gBekup4kInaum1R28Qgvrg)    
+      - [上帝视角看进程调度](https://mp.weixin.qq.com/s/zzGcNr59AJ3bqI9GF9xMqA)    
+    - shell
+      - [Linux Shell 中 ()、(())、[]、[[]]、{} 的作用](https://mp.weixin.qq.com/s/qC3fRhowUyto_9nClyYOLQ)
+      - [Linux 问题故障定位，看这一篇就够了](https://mp.weixin.qq.com/s/J94E7bBdP1BhTtzqU8aLnw)
+      - [Linux 守护进程的启动方法](http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html)
+  
+  - technologies
+    - development tools
+      - [Vim Awesome](https://vimawesome.com/)
+      - [diagrams](https://github.com/mingrammer/diagrams)
+      - [plantuml](https://plantuml.com/)
+      - [rubular](http://www.rubular.com/)
+    - distributed system
+      - [一文理解分布式锁的实现方式](https://mp.weixin.qq.com/s/dbvGhexRNq1FS8Y-37lVSg)
+      - [Raft](http://thesecretlivesofdata.com/raft/)    
+      - [The Raft Consensus Algorithm](https://raft.github.io/)
+    - cache
+      - [快速了解缓存穿透与缓存雪崩](https://mp.weixin.qq.com/s/xT6yuh_esoOlXFpEii4wHA)
+    - rate limiting    
+      - [高并发系统的限流算法与实现](https://mp.weixin.qq.com/s/TH5rJJMQeUeOnwhhYETuog)
+      - [初探布隆过滤器](https://juejin.cn/post/6844903810108751879)  
+    - kubernetes
+      - [Understanding kubernetes networking: pods](https://medium.com/google-cloud/understanding-kubernetes-networking-pods-7117dd28727)  
+
+  - quant
+    - [统计计量 | 显著性水平究竟是何方神圣？](https://mp.weixin.qq.com/s/-G2WL-wuDv4y4p7cIMcDAQ)
+    - [让你永远忘不了的傅里叶变换解析](https://mp.weixin.qq.com/s/yDxav3aoyJh5yfweOagyZQ)    
+    - [直观理解！你一定要读一下的“矩阵和线性代数入门”](https://mp.weixin.qq.com/s/5i6Tgd3ftrCKBUaMhAo-oA)    
+    - [贝叶斯与投资行为偏差](https://mp.weixin.qq.com/s/KibrweV14wRgSYObK0MxRQ)
+    - [贝叶斯优化/Bayesian Optimization](https://zhuanlan.zhihu.com/p/76269142)    
+    - [蒙特卡罗方法入门](https://mp.weixin.qq.com/s/gfKSRUMMXlfmYlxcDWPGog)    
+
+  - leadership
+    - [你不是没重点而是没结构：如何有效分析问题？](https://mp.weixin.qq.com/s/kSHwVmTQigOsuyKoGA_kIw)
+    - [如何有效地沟沟沟沟沟沟沟通……](https://mp.weixin.qq.com/s/Tm3gYIudT0Rbs7ABg8u0ew)
+    - [有没有什么办法解锁超常的专注力？](https://mp.weixin.qq.com/s/5auZXEKcf9rkGwo9OWaIuA)
+    - [李沐：工作五年反思](https://mp.weixin.qq.com/s/WC0KCXLk3PgXHo-pEXkiiw)
+    
+  - bloggers
+    - [draveness](https://draveness.me/)
+    - [廖雪峰](https://www.liaoxuefeng.com/)
+    - [binux](https://binux.blog/)
+    - [田守枝](http://www.tianshouzhi.com/)
+    - [阮一峰](https://www.ruanyifeng.com/blog/)
+    - [公众号「王的机器」所有文章汇总](https://zhuanlan.zhihu.com/p/88307466)
+    
+  - business analysis
+    - [KPI Library](http://www.kpilibrary.com)    
